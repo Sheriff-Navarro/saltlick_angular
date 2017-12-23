@@ -1,7 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { FileUploader } from 'ng2-file-upload';
+
 import { environment } from '../../environments/environment';
 import { AuthServiceService } from '../services/auth-service.service';
+import { RecipeServiceService } from '../services/recipe-service.service';
+
+
 
 @Component({
   selector: 'app-recipes',
@@ -14,9 +19,17 @@ export class RecipesComponent implements OnInit {
   baseUrl = environment.apiBase;
   logoutError: string;
 
+  recipeArray: any[] = [];
+  recipeListError: string;
+
+  myCoolUploader = new FileUploader({
+   url: environment.apiBase + '/api/recipes',
+   itemAlias: 'recipePicture'
+ });
 
   constructor(
     private authThang: AuthServiceService,
+    private recipeThang: RecipeServiceService,
     private routerThang: Router
 
   ) { }
@@ -25,9 +38,10 @@ export class RecipesComponent implements OnInit {
     this.authThang.checklogin()
       .then((userFromApi) => {
           this.currentUser = userFromApi;
+          this.getThemRecipes();
       })
       .catch(() => {
-          this.routerThang.navigate(['/']);
+          this.routerThang.navigate(['/login']);
       });
   } // close ngOnInit()
 
@@ -40,5 +54,16 @@ export class RecipesComponent implements OnInit {
           this.logoutError = 'Log out went to 💩';
       });
   } // close logMeOutPls()s
+
+
+  getThemRecipes() {
+    this.recipeThang.allRecipes()
+    .subscribe(
+      (allTheRecipes) => { this.recipeArray = allTheRecipes }
+      () => {
+        this.recipeListError = 'Sorry, could not retrieve all the recipes'
+      }
+    );
+  }//close getThemRecipes.
 
 }

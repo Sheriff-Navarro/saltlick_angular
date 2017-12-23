@@ -14,3 +14,18 @@
    <p> Here's the user object </p>
    <pre> {{ user | json }} </pre>
  </div>
+
+ <hr>
+ <p *ngIf="recipeListError" class="error">
+   {{ recipeListError }}
+ </p>
+
+
+ <ul>
+  <li *ngFor="let recipe of recipeArray">
+    <h3> {{ recipe.name }} </h3>
+    <p>
+      Owned by: {{ recipe.user.fullName }}
+    </p>
+  </li>
+</ul>
