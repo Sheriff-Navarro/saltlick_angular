@@ -1,0 +1,39 @@
+<div *ngIf="isLoggedOut">
+  <h2> Home Page </h2>
+
+  <p> SaltLick </p>
+
+  <h3> Sign Up </h3>
+
+  <p *ngIf="errorMessage" class="error">
+    {{ errorMessage }}
+  </p>
+
+  <form (ngSubmit)="doSignUp()">
+    <label for="full-name-input"> Full Name </label>
+    <input  id="full-name-input" type="text" placeholder="Blanche Bourbon"
+        [(ngModel)]="signUpInfo.fullName" name="fullNameValue">
+    <br>
+
+    <label for="email-input"> Email </label>
+    <input  id="email-input" type="email" placeholder="blah@example.com"
+        [(ngModel)]="signUpInfo.email" name="emailValue">
+    <br>
+
+    <label for="password-input"> Password </label>
+    <input  id="password-input" type="password" placeholder="*****"
+        [(ngModel)]="signUpInfo.password" name="passwordValue">
+    <br>
+
+    <button> Sign Up </button>
+  </form>
+
+  <div *ngIf="user">
+    <h2> You are now logged in as {{ user.username }}!! </h2>
+    <p> Here's the user object </p>
+    <pre> {{ user | json }} </pre>
+  </div>
+
+
+
+</div>
