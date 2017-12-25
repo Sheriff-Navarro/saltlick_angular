@@ -22,10 +22,20 @@ export class RecipesComponent implements OnInit {
   recipeArray: any[] = [];
   recipeListError: string;
 
+  isShowingForm: boolean = false;
+
+  recipeInfo = {
+    recipeName: "",
+    recipeCookTime: undefined,
+    recipeServes: undefined,
+  }
+
   myCoolUploader = new FileUploader({
    url: environment.apiBase + '/api/recipes',
    itemAlias: 'recipePicture'
  });
+
+ saveError: string;
 
   constructor(
     private authThang: AuthServiceService,
@@ -59,11 +69,54 @@ export class RecipesComponent implements OnInit {
   getThemRecipes() {
     this.recipeThang.allRecipes()
     .subscribe(
-      (allTheRecipes) => { this.recipeArray = allTheRecipes }
+      (allTheRecipes) => { this.recipeArray = allTheRecipes },
       () => {
         this.recipeListError = 'Sorry, could not retrieve all the recipes'
       }
     );
   }//close getThemRecipes.
+
+  showRecipeForm() {
+    this.isShowingForm = true;
+  }//close showRecipeForm();
+
+  saveNewRecipe() {
+    //if no recipe, regular AJAX upload
+    if (this.myCoolUploader.getNotUploadedItems().length===0){
+    this.saveRecipeNoPicture();
+  }
+  //else, upload pictures with FileUploader
+  else {
+  this.saveRecipewithPicture();
+  }
+} //close saveNewRecipe ()
+
+private saveRecipewithPicture() {
+  this.myCoolUploader.onBuildItemForm = (item, form) => {
+    form.append('recipeName', this.recipeInfo.recipeName);
+    form.append('recipeServes', this.recipeInfo.recipeServes);
+    form.append('recipeCookTime', this.recipeInfo.recipeCookTime);
+  };
+  this.myCoolUploader.onSuccessItem = (item, response) =>{
+    console.log(item);
+    const newRecipeFromApi = JSON.parse(response);
+    this.recipeArray.push(newRecipeFromApi);
+    this.isShowingForm = false;
+    this.recipeInfo = {
+      recipeName: "",
+      recipeCookTime: undefined,
+      recipeServes: undefined,
+    };
+    this.saveError = '';
+  };
+
+  this.myCoolUploader.onErrorItem = (item, response) => {
+    console.log(item, respone);
+    this.saveError = 'New Recipe could not be saved with picture.'
+  }
+  //this is the function that initiates the AJAX request
+  this.myCoolUploader.uploadAll();
+}//closes saveRecipewithPicture
+
 
 }
