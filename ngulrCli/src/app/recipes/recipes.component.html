@@ -16,6 +16,8 @@
  </div>
 
  <hr>
+
+ <hr>
  <p *ngIf="recipeListError" class="error">
    {{ recipeListError }}
  </p>
@@ -28,6 +30,8 @@
     <p>
       Owned by: {{ recipe.user.fullName }}
     </p>
+    <a [routerLink]="['/recipe', recipe._id]"> View Details </a>
+
   </li>
 </ul>
 
@@ -48,7 +52,7 @@
   <input type = "text" id="recipe-serves-input" placeholder=" 4" [(ngModel)] = "recipeInfo.recipeServes" name = "recipeServes">
   <br>
   <label for="recipe-serves-input"> Prep + Cook Time?  </label>
-  <input type = "text" id="recipe-cookTime-input" placeholder=" 4" [(ngModel)] = "recipeInfo.recipeCookTime" name = "recipeServes">
+  <input type = "text" id="recipe-cookTime-input" placeholder=" 4" [(ngModel)] = "recipeInfo.recipeCookTime" name = "recipeServes"> minutes
   <br>
   <label> Ingredients </label>
   <input type="text" #ingredient />
@@ -58,12 +62,21 @@
     <li *ngFor="let ingredient of recipeInfo.recipeIngredients"> {{ ingredient }} </li>
   </ul>
 
-  <label for="recipe-picture-input"> Recipe Picture (optional)</label>
+  <label> Directions </label>
+  <input type="text" #direction />
+  <button (click)="addDirection(direction.value); direction.value = '' "> Add direction </button>
+
+  <ul>
+    <li *ngFor="let direction of recipeInfo.recipeDirections"> {{ direction }} </li>
+  </ul>
+
+  <label for="recipe-picture-input"> Recipe Picture (required)</label>
     <input  id="recipe-picture-input" type="file" name="recipePictuer"
         ng2FileSelect [uploader]="myCoolUploader">
     <br>
 
     <button> Save Recipe </button>
 </form>
+
 
 </div>

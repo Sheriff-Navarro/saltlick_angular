@@ -1,7 +1,7 @@
- import { Injectable } from '@angular/core';
+import { Injectable } from '@angular/core';
 import { Http } from '@angular/http';
 import 'rxjs/add/operator/map';
-
+import {Observable} from 'rxjs/Rx';
 import { environment } from '../../environments/environment';
 
 
@@ -40,6 +40,29 @@ export class RecipeServiceService {
         // Parse the JSON
         .map(res => res.json());
   } // close allRecipes()
+
+get(id){
+  return this.httpThang
+  .get(
+    `${environment.apiBase}/api/recipes/${id}`,
+    {withCredentials: true }
+  )
+  //parse the json
+  .map(res => res.json());
+}//close specific recipe
+
+// get(id) {
+//   var temp = this.httpThang.get(`${environment.apiBase}/api/recipes/${id}`)
+//     .map((res) => res.json());
+//     return temp;
+// }
+
+// get(id) {
+//   return this.httpThang.get(`${environment.apiBase}/api/recipes/${id}`)
+//   .map((res) => res.json());
+// }
+
+
 
 
 }

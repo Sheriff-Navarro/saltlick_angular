@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import { FileUploader } from 'ng2-file-upload';
 
 import { environment } from '../../environments/environment';
@@ -42,11 +42,14 @@ export class RecipesComponent implements OnInit {
   constructor(
     private authThang: AuthServiceService,
     private recipeThang: RecipeServiceService,
-    private routerThang: Router
+    private routerThang: Router,
+    private route: ActivatedRoute
 
   ) { }
 
   ngOnInit() {
+    // this.getThemRecipes();
+
     this.authThang.checklogin()
       .then((userFromApi) => {
           this.currentUser = userFromApi;
