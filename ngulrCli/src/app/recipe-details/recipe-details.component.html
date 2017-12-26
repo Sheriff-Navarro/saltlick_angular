@@ -4,15 +4,22 @@
     <div *ngIf="recipe">
 
       <div class="recipe-info">
-        <h1> Recipe Name {{ recipe.name }}&nbsp;</h1>
-        <h1>  Name {{ recipe.user.fullName }}&nbsp;</h1>
+        <h1> Recipe Name {{ recipe.recipe.name }}&nbsp;</h1>
+        <h1>  Name {{ recipe.recipe.user.fullName }}&nbsp;</h1>
         <div >
-          <img *ngIf = "recipe.picture" [src]="baseUrl + recipe.picture" alt="">
+          <img *ngIf = "recipe.recipe.picture" [src]="baseUrl + recipe.recipe.picture" alt="">
       </div>
-        <h3> Cook Time {{ recipe.cookTime }} </h3>
-        <h3> Serves {{ recipe.serves }} </h3>
+        <h3> Cook Time {{ recipe.recipe.cookTime }} </h3>
+        <h3> Serves {{ recipe.recipe.serves }} </h3>
       </div>
       <hr>
+      <div *ngFor="let review of recipe.review">
+      <h2> Review {{ review.review }}&nbsp;</h2>
+      <h2> Rating {{ review.rating }}&nbsp;</h2>
+      <h2> Review Creator {{ review.user.fullName }}&nbsp;</h2>
+      <div class="phone-thumbnail">
+      <img height="50" [src]="review.creatorThumbnail" />
+      </div>
       <hr>
 
 
