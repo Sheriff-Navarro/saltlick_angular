@@ -28,6 +28,8 @@ export class RecipesComponent implements OnInit {
     recipeName: "",
     recipeCookTime: undefined,
     recipeServes: undefined,
+    recipeIngredients: [],
+    recipeDirections: []
   }
 
   myCoolUploader = new FileUploader({
@@ -91,11 +93,40 @@ export class RecipesComponent implements OnInit {
   }
 } //close saveNewRecipe ()
 
+addIngredient(ingredient) {
+    this.recipeInfo.recipeIngredients.push(ingredient);
+  }
+
+addDirection(direction) {
+    this.recipeInfo.recipeDirections.push(direction);
+  }
+
+private saveRecipeNoPicture() {
+  this.recipeThang.newRecipe(this.recipeInfo)
+  .subscribe(
+    (newRecipeFromApi) => {
+      this.recipeArray.push(newRecipeFromApi);
+      this.isShowingForm = false;
+      this.recipeInfo = {
+        recipeName: "",
+        recipeCookTime: undefined,
+        recipeServes: undefined,
+        recipeIngredients: [],
+        recipeDirections: []
+      };
+      this.saveError = 'There was an error saving the recipe.'
+    }
+  );
+}//close saveRecipeNoPicture
+
 private saveRecipewithPicture() {
   this.myCoolUploader.onBuildItemForm = (item, form) => {
     form.append('recipeName', this.recipeInfo.recipeName);
     form.append('recipeServes', this.recipeInfo.recipeServes);
     form.append('recipeCookTime', this.recipeInfo.recipeCookTime);
+    form.append('recipeIngredients', JSON.stringify(this.recipeInfo.recipeIngredients));
+    form.append('recipeDirections', JSON.stringify(this.recipeInfo.recipeDirections));
+
   };
   this.myCoolUploader.onSuccessItem = (item, response) =>{
     console.log(item);
@@ -106,12 +137,14 @@ private saveRecipewithPicture() {
       recipeName: "",
       recipeCookTime: undefined,
       recipeServes: undefined,
+      recipeIngredients: [],
+      recipeDirections: []
     };
     this.saveError = '';
   };
 
   this.myCoolUploader.onErrorItem = (item, response) => {
-    console.log(item, respone);
+    console.log(item, response);
     this.saveError = 'New Recipe could not be saved with picture.'
   }
   //this is the function that initiates the AJAX request

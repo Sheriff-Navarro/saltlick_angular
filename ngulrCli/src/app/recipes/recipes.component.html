@@ -50,6 +50,14 @@
   <label for="recipe-serves-input"> Prep + Cook Time?  </label>
   <input type = "text" id="recipe-cookTime-input" placeholder=" 4" [(ngModel)] = "recipeInfo.recipeCookTime" name = "recipeServes">
   <br>
+  <label> Ingredients </label>
+  <input type="text" #ingredient />
+  <button (click)="addIngredient(ingredient.value); ingredient.value = '' "> add ingredient </button>
+
+  <ul>
+    <li *ngFor="let ingredient of recipeInfo.recipeIngredients"> {{ ingredient }} </li>
+  </ul>
+
   <label for="recipe-picture-input"> Recipe Picture (optional)</label>
     <input  id="recipe-picture-input" type="file" name="recipePictuer"
         ng2FileSelect [uploader]="myCoolUploader">
