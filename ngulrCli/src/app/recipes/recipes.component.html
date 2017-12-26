@@ -61,6 +61,15 @@
   <ul>
     <li *ngFor="let ingredient of recipeInfo.recipeIngredients"> {{ ingredient }} </li>
   </ul>
+  <br>
+  <label> Directions </label>
+  <input type="text" #direction />
+  <button (click)="addDirection(direction.value); direction.value = '' "> add direction </button>
+
+  <ul>
+    <li *ngFor="let direction of recipeInfo.recipeDirections"> {{ direction }} </li>
+  </ul>
+
 
   <label> Directions </label>
   <input type="text" #direction />
