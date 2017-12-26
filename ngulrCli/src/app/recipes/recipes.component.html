@@ -57,6 +57,15 @@
   <ul>
     <li *ngFor="let ingredient of recipeInfo.recipeIngredients"> {{ ingredient }} </li>
   </ul>
+  <br>
+  <label> Directions </label>
+  <input type="text" #direction />
+  <button (click)="addDirection(direction.value); direction.value = '' "> add direction </button>
+
+  <ul>
+    <li *ngFor="let direction of recipeInfo.recipeDirections"> {{ direction }} </li>
+  </ul>
+
 
   <label for="recipe-picture-input"> Recipe Picture (optional)</label>
     <input  id="recipe-picture-input" type="file" name="recipePictuer"
