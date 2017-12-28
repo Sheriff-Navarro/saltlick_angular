@@ -29,8 +29,7 @@ import { RecipeDetailsComponent } from './recipe-details/recipe-details.componen
     HttpModule,
     FileUploadModule,
     FormsModule,
-    RouterModule.forRoot(routes, { enableTracing: true } // <-- debugging purposes only
-),
+    RouterModule.forRoot(routes),
   ],
   providers: [
     AuthServiceService,

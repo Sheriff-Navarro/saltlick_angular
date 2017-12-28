@@ -16,8 +16,21 @@ import { RecipeServiceService } from '../services/recipe-service.service';
 export class RecipeDetailsComponent implements OnInit {
   recipe: any;
 
+  paramsId = undefined;
+
+  reviewInfo = {
+    reviewRating: undefined,
+    reviewReview: ""
+  }
+
+  reviewArray: any[] = [];
+  reviewListError: string;
+  saveError: string;
+  isShowingForm: boolean = false;
+
   currentUser: any = {};
   baseUrl = environment.apiBase;
+
 
   constructor(
     private routerThang: Router,
@@ -26,24 +39,25 @@ export class RecipeDetailsComponent implements OnInit {
     private recipeThang: RecipeServiceService,
   ) { }
 
-  // ngOnInit() {
-  //   this.authThang.checklogin()
-  //     .then((userFromApi) => {
-  //         this.currentUser = userFromApi;
-  //         this.route.params.subscribe(params => {
-  //           this.getRecipeDetails(params['id']);
-  //         })
-  //         })
-  //     .catch(() => {
-  //         this.routerThang.navigate(['/login']);
-  //     });
-  // } //
-
   ngOnInit() {
-    this.route.params.subscribe(params => {
-     this.getRecipeDetails(params['id']);
-   });
- }
+    this.authThang.checklogin()
+      .then((userFromApi) => {
+          this.currentUser = userFromApi;
+          this.route.params.subscribe(params => {
+            this.getRecipeDetails(params['id']);
+          })
+          })
+      .catch(() => {
+          this.routerThang.navigate(['/login']);
+      });
+
+  } //
+
+ //  ngOnInit() {
+ //    this.route.params.subscribe(params => {
+ //     this.getRecipeDetails(params['id']);
+ //   });
+ // }
 
   getRecipeDetails(id) {
     this.recipeThang.get(id)
@@ -52,6 +66,32 @@ export class RecipeDetailsComponent implements OnInit {
       this.recipe = recipe;
     })
   }
+
+  showReviewForm() {
+    this.isShowingForm = true;
+  }//close showRecipeForm();
+
+getParamsId(){
+this.route.params.subscribe(params => {
+  this.saveNewReview(params['id']);
+})
+}
+
+
+saveNewReview(id) {
+  this.recipeThang.newReview(this.reviewInfo, id)
+    .subscribe(
+      (newReviewFromApi) => {
+        // this.reviewArray.push(newReviewFromApi);
+        this.isShowingForm = false;
+        this.reviewInfo = {
+          reviewRating: undefined,
+          reviewReview: ''
+        };//close this.reviewInfo
+        this.saveError = 'There was an error saving the review.';
+      }//close newReviewFromApi
+    );//close subscribe
+}//close saveNewReview
 
 
 }

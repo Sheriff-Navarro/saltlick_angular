@@ -13,6 +13,7 @@
         <h3> Serves {{ recipe.recipe.serves }} </h3>
       </div>
       <hr>
+
       <div *ngFor="let review of recipe.review">
       <h2> Review {{ review.review }}&nbsp;</h2>
       <h2> Rating {{ review.rating }}&nbsp;</h2>
@@ -21,8 +22,26 @@
       <img height="50" [src]="review.creatorThumbnail" />
       </div>
       <hr>
+      </div>
+      </div>
+      <button *ngIf="!isShowingForm" (click)="showReviewForm()">
+        Add Review
+      </button>
+      <hr>
+      <div *ngIf = "isShowingForm">
+        <h3>Create a New Review</h3>
+        <p *ngIf = "saveError " class = "error">
+        {{saveError}}</p>
 
+        <form (ngSubmit) ="getParamsId()" (ngSubmit) ="saveNewReview()" >
+          <label for="review-rating-input"> Recipe Rating </label>
+          <input type="number" id="review-rating-input"
+          placeholder =" Rate this recipe 1-5" [(ngModel)]="reviewInfo.reviewRating" name="reviewRating">
+          <br>
+          <label for="review-rating-input"> Recipe Review</label>
+          <input type="text" id="review-review-input" placeholder = "Write what you liked about the recipe." [(ngModel)] = "reviewInfo.reviewReview" name="reviewReview">
+          <br>
+          <!-- <input id="review-recipeId-input" name="prodId" type="hidden" value="{{reviewInfo.recipeId}}" [(ngModel)] = "reviewInfo.recipeId"> -->
 
-
-        <hr>
-  </div>
+          <button>Submit Review </button>
+        </form>
