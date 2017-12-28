@@ -82,7 +82,7 @@ saveNewReview(id) {
   this.recipeThang.newReview(this.reviewInfo, id)
     .subscribe(
       (newReviewFromApi) => {
-        // this.reviewArray.push(newReviewFromApi);
+        this.recipe.review.push(newReviewFromApi);
         this.isShowingForm = false;
         this.reviewInfo = {
           reviewRating: undefined,
