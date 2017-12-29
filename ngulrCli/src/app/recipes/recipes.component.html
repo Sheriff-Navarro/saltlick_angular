@@ -70,15 +70,6 @@
     <li *ngFor="let direction of recipeInfo.recipeDirections"> {{ direction }} </li>
   </ul>
 
-
-  <label> Directions </label>
-  <input type="text" #direction />
-  <button (click)="addDirection(direction.value); direction.value = '' "> Add direction </button>
-
-  <ul>
-    <li *ngFor="let direction of recipeInfo.recipeDirections"> {{ direction }} </li>
-  </ul>
-
   <label for="recipe-picture-input"> Recipe Picture (required)</label>
     <input  id="recipe-picture-input" type="file" name="recipePictuer"
         ng2FileSelect [uploader]="myCoolUploader">

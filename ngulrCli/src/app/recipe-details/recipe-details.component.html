@@ -5,7 +5,7 @@
 
       <div class="recipe-info">
         <h1> Recipe Name {{ recipe.recipe.name }}&nbsp;</h1>
-        <h1>  Name {{ recipe.recipe.user.fullName }}&nbsp;</h1>
+        <a [routerLink]="['/profile', recipe.recipe.user._id]"> Name {{ recipe.recipe.user.fullName}} </a>
         <div >
           <img *ngIf = "recipe.recipe.picture" [src]="baseUrl + recipe.recipe.picture" alt="">
       </div>
@@ -18,7 +18,7 @@
       <h2> Review {{ review.review }}&nbsp;</h2>
       <h2> Rating {{ review.rating }}&nbsp;</h2>
       <a [routerLink]="['/profile', review.user._id]"> Review Creator {{ review.user.fullName }} </a>
-    
+
       <div class="phone-thumbnail">
       <img height="50" [src]="review.creatorThumbnail" />
       </div>

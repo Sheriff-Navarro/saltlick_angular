@@ -7,12 +7,13 @@ import { LoginComponent } from './login/login.component';
 import { RecipeDetailsComponent } from './recipe-details/recipe-details.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { ProfileComponent } from './profile/profile.component';
+import { HomeComponent } from './home/home.component';
 
 
 export const routes: Routes = [
 
 
-  {path: '', component: SignupComponent},
+  {path: '', component: HomeComponent},
   {path: 'signup', component: SignupComponent  },
   {path: 'login', component: LoginComponent },
   {path: 'recipe/:id', component: RecipeDetailsComponent},
