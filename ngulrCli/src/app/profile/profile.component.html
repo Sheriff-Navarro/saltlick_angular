@@ -1,0 +1,15 @@
+<p>
+  profile works!
+</p>
+
+<ul>
+ <li *ngFor="let recipe of userRecipeArray">
+   <h3> {{ recipe.name }} </h3>
+   <img *ngIf = "recipe.picture" [src]="baseUrl + recipe.picture" alt="">
+   <p>
+     Owned by: {{ recipe.user.fullName }}
+   </p>
+   <a [routerLink]="['/recipe', recipe._id]"> View Details </a>
+
+ </li>
+</ul>

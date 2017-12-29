@@ -17,7 +17,8 @@
       <div *ngFor="let review of recipe.review">
       <h2> Review {{ review.review }}&nbsp;</h2>
       <h2> Rating {{ review.rating }}&nbsp;</h2>
-      <h2> Review Creator {{ review.user.fullName }}&nbsp;</h2>
+      <a [routerLink]="['/profile', review.user._id]"> Review Creator {{ review.user.fullName }} </a>
+    
       <div class="phone-thumbnail">
       <img height="50" [src]="review.creatorThumbnail" />
       </div>

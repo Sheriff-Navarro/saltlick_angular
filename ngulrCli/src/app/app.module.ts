@@ -1,3 +1,4 @@
+//Modules
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpModule } from '@angular/http';
@@ -5,15 +6,19 @@ import { FormsModule } from '@angular/forms';
 import { FileUploadModule } from 'ng2-file-upload';
 import { RouterModule } from '@angular/router';
 import { routes } from './app-routing.module';
-
-import { AppComponent } from './app.component';
-import { AuthServiceService } from './services/auth-service.service';
-import { RecipeServiceService } from './services/recipe-service.service';
 import { SignupComponent } from './signup/signup.component';
 import { AppRoutingModule } from './app-routing.module';
+//SERVICES
+import { AuthServiceService } from './services/auth-service.service';
+import { RecipeServiceService } from './services/recipe-service.service';
+import { ProfileServiceService }from './services/profile-service.service';
+//COMPONENTS
+import { AppComponent } from './app.component';
 import { RecipesComponent } from './recipes/recipes.component';
 import { LoginComponent } from './login/login.component';
 import { RecipeDetailsComponent } from './recipe-details/recipe-details.component';
+import { NotFoundComponent } from './not-found/not-found.component';
+import { ProfileComponent } from './profile/profile.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +26,9 @@ import { RecipeDetailsComponent } from './recipe-details/recipe-details.componen
     SignupComponent,
     RecipesComponent,
     LoginComponent,
-    RecipeDetailsComponent
+    RecipeDetailsComponent,
+    NotFoundComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,
@@ -33,7 +40,8 @@ import { RecipeDetailsComponent } from './recipe-details/recipe-details.componen
   ],
   providers: [
     AuthServiceService,
-    RecipeServiceService
+    RecipeServiceService,
+    ProfileServiceService
   ],
   bootstrap: [AppComponent]
 })
