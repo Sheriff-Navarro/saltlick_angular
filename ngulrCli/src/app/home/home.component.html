@@ -1,3 +1,58 @@
-<div id="bg">
+  <h2> Home Page </h2>
+
+  <p> SaltLick </p>
+
+  <h3> Sign Up </h3>
+
+
+  <button *ngIf="!isShowingSignup" (click)="showSignupForm()">
+SignUp  </button>
+
+<div *ngIf = "isShowingSignup">
+<p *ngIf="errorMessage" class="error">
+  {{ errorMessage }}
+</p>
+  <form (ngSubmit)="doSignUp()">
+    <label for="full-name-input"> Full Name </label>
+    <input  id="full-name-input" type="text" placeholder="Blanche Bourbon"
+        [(ngModel)]="signUpInfo.fullName" name="fullNameValue">
+    <br>
+
+    <label for="email-input"> Email </label>
+    <input  id="email-input" type="email" placeholder="blah@example.com"
+        [(ngModel)]="signUpInfo.email" name="emailValue">
+    <br>
+
+    <label for="password-input"> Password </label>
+    <input  id="password-input" type="password" placeholder="*****"
+        [(ngModel)]="signUpInfo.password" name="passwordValue">
+    <br>
+
+    <button> Sign Up </button>
+  </form>
+</div>
+  <div *ngIf="user">
+    <h2> You are now logged in as {{ user.username }}!! </h2>
+    <p> Here's the user object </p>
+    <pre> {{ user | json }} </pre>
+  </div>
+
+  <button *ngIf="!isShowingLogin" (click)="showLoginForm()">
+Login  </button>
+
+<div *ngIf = "isShowingLogin">
+  <form (ngSubmit)="doLogin()">
+    <label for="login-email-input"> Email </label>
+    <input  id="login-email-input" type="email" placeholder="hi@example.com"
+        [(ngModel)]="loginInfo.email" name="loginEmail">
+    <br>
+
+    <label for="login-pass-input"> Password </label>
+    <input  id="login-pass-input" type="password" placeholder="*****"
+        [(ngModel)]="loginInfo.password" name="loginPassword">
+    <br>
+
+    <button> Log In </button>
+  </form>
 
 </div>

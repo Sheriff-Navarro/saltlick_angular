@@ -3,10 +3,10 @@ body, html{
 }
 
 #bg{
-  background-image: url('/../../assets/images/landingPage.png');
+  /*background-image: url('/../../assets/images/landingPage.png');*/
   border-radius: 3px;
   height: 400px;
   background-size: cover;
   background-position: center;
-
+  color: red;
 }
