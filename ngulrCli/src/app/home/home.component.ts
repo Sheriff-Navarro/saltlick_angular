@@ -46,11 +46,13 @@ export class HomeComponent implements OnInit {
 
   showLoginForm() {
     this.isShowingLogin = true;
+    this.isShowingSignup = false;
   }//close showRecipeForm();
 
 
   showSignupForm() {
       this.isShowingSignup = true;
+      this.isShowingLogin = false;
     }//close showRecipeForm();
 
 

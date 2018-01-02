@@ -1,10 +1,4 @@
-  <h2> Home Page </h2>
-
-  <p> SaltLick </p>
-
-  <h3> Sign Up </h3>
-
-
+<!--
   <button *ngIf="!isShowingSignup" (click)="showSignupForm()">
 SignUp  </button>
 
@@ -55,4 +49,73 @@ Login  </button>
     <button> Log In </button>
   </form>
 
+</div> -->
+<!-- <div class = "col-xs-5">
+<form>
+  <div class="form-group">
+    <label for="exampleInputEmail1">Email address</label>
+    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+  </div>
+  <div class="form-group">
+    <label for="exampleInputPassword1">Password</label>
+    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+  </div>
+
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+</div> -->
+
+<div id="formCont"class="container-fluid">
+
+<div class = "col-sm-3"></div>
+<div id="homeCard"class = "col-sm-6 z-depth-2">
+      <div class="col-sm-12 container-fluid" id="formHead">
+        Sign Up
+      </div>
+
+    <div >
+    <p *ngIf="errorMessage" class="error">
+      {{ errorMessage }}
+    </p>
+
+      <form (ngSubmit)="doSignUp()">
+        <label for="full-name-input" class="form-top"> Full Name </label>
+        <input  class="form-control input" id="full-name-input" type="text" placeholder="Chef Kiki"
+            [(ngModel)]="signUpInfo.fullName" name="fullNameValue">
+        <br>
+
+        <label for="email-input"> Email </label>
+        <input  class="form-control input" id="email-input" type="email" placeholder="chefkiki@delicious.com"
+            [(ngModel)]="signUpInfo.email" name="emailValue">
+        <br>
+
+        <label for="password-input"> Password </label>
+        <input class="form-control input" id="password-input" type="password" placeholder="*****"
+            [(ngModel)]="signUpInfo.password" name="passwordValue">
+        <br>
+        <div class="row">
+          <div class="col-sm-2"></div>
+          <button class="btn-primary col-xs-8"> Join Now </button>
+          <div class="col-sm-2"></div>
+        </div>
+      </form>
+    </div>
+    <!-- <div class="form-group" *ngIf = "isShowingLogin">
+      <form (ngSubmit)="doLogin()">
+        <label for="login-email-input"> Email </label>
+        <input  class = "form-control" id="login-email-input" type="email" placeholder="hi@example.com"
+            [(ngModel)]="loginInfo.email" name="loginEmail">
+        <br>
+
+        <label for="login-pass-input"> Password </label>
+        <input  class = "form-control" id="login-pass-input" type="password" placeholder="*****"
+            [(ngModel)]="loginInfo.password" name="loginPassword">
+        <br>
+
+        <button> Log In </button>
+      </form>
+    </div> -->
+</div>
+<div class = "col-sm-3"></div>
 </div>

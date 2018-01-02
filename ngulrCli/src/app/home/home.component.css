@@ -1,5 +1,7 @@
 body, html{
   height: 100%;
+  background-color: #F0F0F0;
+
 }
 
 #bg{
@@ -9,4 +11,55 @@ body, html{
   background-size: cover;
   background-position: center;
   color: red;
+}
+
+form {
+  padding: 15px;
+  text-align: left;
+}
+
+#formCont {
+  margin-top: 50px;
+}
+
+#homeCard {
+  font-size: 20px;
+  background-color: white;
+  text-align: center;
+  padding: 0px;
+  border-style: solid;
+  border-radius: 1px;
+  border-color: #F0F0F0;
+  box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+}
+
+#formHead {
+  background-color: #364f6b;
+  padding: 25px;
+  padding-left: 0px;
+  padding-right: 0px;
+  color: white;
+  font-size: 25px;
+  font-weight: 200;
+  /*width: 650px;*/
+  margin: 0px;
+}
+
+.btn-primary{
+  margin-top: 20px;
+  margin-bottom: 40px;
+  padding: 10px;
+  background-color: #43DDE6;
+  font-size: 23px;
+}
+
+.form-top {
+  margin-top: 30px;
+
+}
+
+.input {
+  padding: 20px;
+  font-size: 18px;
+  background-color: #f0f0f0;
 }
