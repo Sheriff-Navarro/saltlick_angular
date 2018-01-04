@@ -13,7 +13,7 @@ import { RecipeServiceService } from '../services/recipe-service.service';
 })
 export class HomeComponent implements OnInit {
   isShowingLogin: boolean = false;
-  isShowingSignup: boolean = false;
+  isShowingSignup: boolean = true;
   isLoggedOut: boolean = false;
 
 

@@ -15,15 +15,13 @@
    <pre> {{ user | json }} </pre>
  </div>
 
- <hr>
 
- <hr>
  <p *ngIf="recipeListError" class="error">
    {{ recipeListError }}
  </p>
 
 
- <ul>
+ <!-- <ul>
   <li *ngFor="let recipe of recipeArray">
     <h3> {{ recipe.name }} </h3>
     <img *ngIf = "recipe.picture" [src]="baseUrl + recipe.picture" alt="">
@@ -33,7 +31,30 @@
     <a [routerLink]="['/recipe', recipe._id]"> View Details </a>
 
   </li>
-</ul>
+</ul> -->
+<div class="col-sm-1">
+</div>
+<div [routerLink]="['/recipe', recipe._id]" id="eachRecipe"class = "col-sm-3 container" *ngFor = "let recipe of recipeArray">
+  <div class = "row ">
+    <div class="col-sm-12" id="withinRecipe">
+      <img *ngIf = "recipe.picture" [src]="baseUrl + recipe.picture" class="img-thumbnail" alt="Responsive image">
+    </div>
+    <div class="row">
+    <div class="col-sm-12">
+
+    <p id="recipeName" [routerLink]="['/recipe', recipe._id]">{{recipe.name}}</p>
+    <p id="cookTime"> Cook Time: <b >{{recipe.cookTime}}</b> Minutes </p>
+    <p id="recipeCreator">Recipe Creator: <b id="creator1"     [routerLink]="['/profile', recipe.user._id]"
+>{{recipe.user.fullName}}</b></p>
+</div>
+</div>
+
+</div>
+<!-- end of row -->
+</div>
+<!-- end of container -->
+<div class="col-sm-1">
+</div>
 
 <button *ngIf="!isShowingForm" (click)="showRecipeForm()">
   Add Recipe

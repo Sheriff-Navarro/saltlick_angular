@@ -70,16 +70,25 @@ Login  </button>
 
 <div class = "col-sm-3"></div>
 <div id="homeCard"class = "col-sm-6 z-depth-2">
-      <div class="col-sm-12 container-fluid" id="formHead">
-        Sign Up
-      </div>
+    <div class="showForms" id="formHead">
+      <span  (click)="showSignupForm()">
+      SignUp  </span> -or-
+      <span  (click)="showLoginForm()">
+      Login  </span>
+    </div>
+
+
+      <!-- <div class="col-sm-12 container-fluid" id="formHead">
+        Sign Up     |     Login
+      </div> -->
 
     <div >
-    <p *ngIf="errorMessage" class="error">
-      {{ errorMessage }}
-    </p>
 
-      <form (ngSubmit)="doSignUp()">
+    <div *ngIf="errorMessage" class="error">
+      {{ errorMessage }}
+    </div>
+
+      <form *ngIf = "isShowingSignup" (ngSubmit)="doSignUp()">
         <label for="full-name-input" class="form-top"> Full Name </label>
         <input  class="form-control input" id="full-name-input" type="text" placeholder="Chef Kiki"
             [(ngModel)]="signUpInfo.fullName" name="fullNameValue">
@@ -101,21 +110,22 @@ Login  </button>
         </div>
       </form>
     </div>
-    <!-- <div class="form-group" *ngIf = "isShowingLogin">
+    <div class="form-group" *ngIf = "isShowingLogin">
       <form (ngSubmit)="doLogin()">
         <label for="login-email-input"> Email </label>
-        <input  class = "form-control" id="login-email-input" type="email" placeholder="hi@example.com"
+        <input  class = "form-control input" id="login-email-input" type="email" placeholder="hi@example.com"
             [(ngModel)]="loginInfo.email" name="loginEmail">
         <br>
 
         <label for="login-pass-input"> Password </label>
-        <input  class = "form-control" id="login-pass-input" type="password" placeholder="*****"
+        <input  class = "form-control input" id="login-pass-input" type="password" placeholder="*****"
             [(ngModel)]="loginInfo.password" name="loginPassword">
         <br>
 
-        <button> Log In </button>
-      </form>
-    </div> -->
+        <div class="col-sm-2"></div>
+        <button class="btn-primary col-xs-8"> Login </button>
+        <div class="col-sm-2"></div>      </form>
+    </div>
 </div>
 <div class = "col-sm-3"></div>
 </div>
