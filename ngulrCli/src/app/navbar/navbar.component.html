@@ -2,30 +2,31 @@
 <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=Open+Sans|Open+Sans+Condensed:300|Pacifico|Raleway" rel="stylesheet">
 
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" href="#">Navbar</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
+<nav id="navbarA" class="navbar navbar-expand-lg ">
+  <a class="navbar-brand" href="#">Salty</a>
+  <button class="navbar-toggler font" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon font"></span>
   </button>
-  <div class="collapse navbar-collapse" id="navbarNavDropdown">
-    <ul class="navbar-nav">
-      <li class="nav-item active">
-        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+  <div class="collapse navbar-collapse font" id="navbarNavDropdown">
+    <ul class="navbar-nav font">
+      <li class="nav-item active font">
+        <a class="nav-link font" [routerLink]="['/recipes']">Explore Recipes |<span class="sr-only font">(current)</span></a>
       </li>
-      <li class="nav-item">
+      <!-- <li class="nav-item">
         <a class="nav-link" href="#">Features</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="#">Pricing</a>
-      </li>
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Dropdown link
+      </li> -->
+      <!-- <li *ngIf="currentUser"> {{currentUser.fullName}} </li> -->
+      <li *ngIf="currentUser" class="nav-item">
+        <a class="nav-link font" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" [routerLink]="['/profile', currentUser._id]">
+        {{currentUser.fullName}}
         </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-          <a class="dropdown-item" href="#">Action</a>
-          <a class="dropdown-item" href="#">Another action</a>
-          <a class="dropdown-item" href="#">Something else here</a>
+        <div *ngIf="currentUser" class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <a class="dropdown-item font" [routerLink]="['/profile', currentUser._id]">Action</a>
+          <a class="dropdown-item font" href="#">Another action</a>
+          <a class="dropdown-item font" href="#">Something else here</a>
         </div>
       </li>
     </ul>

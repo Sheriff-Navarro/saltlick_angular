@@ -4,6 +4,7 @@ import { environment } from '../../environments/environment';
 import { Router, ActivatedRoute } from '@angular/router';
 import { AuthServiceService } from '../services/auth-service.service';
 import { RecipeServiceService } from '../services/recipe-service.service';
+import { FileUploader } from 'ng2-file-upload';
 
 @Component({
   selector: 'app-home',
@@ -30,6 +31,12 @@ export class HomeComponent implements OnInit {
     password: ''
   };
 
+  myCoolUploader = new FileUploader({
+   url: environment.apiBase + '/api/signup',
+   itemAlias: 'thumbnail'
+ });
+
+ saveError: string;
   errorMessage: string;
 
 
@@ -55,6 +62,14 @@ export class HomeComponent implements OnInit {
       this.isShowingLogin = false;
     }//close showRecipeForm();
 
+  // saveNewUser(){
+  //   if (this.myCoolUploader.getNotUploadedItems().length === 0) {
+  //     this.saveUserNoPicture();
+  //   }
+  //   else {
+  //     this.saveUserWithPicture();
+  //   }
+  // }
 
     doSignUp() {
        this.authThang.signup(this.signUpInfo)

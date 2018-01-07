@@ -56,7 +56,7 @@ export class RecipesComponent implements OnInit {
           this.getThemRecipes();
       })
       .catch(() => {
-          this.routerThang.navigate(['/login']);
+          this.routerThang.navigate(['/']);
       });
   } // close ngOnInit()
 

@@ -5,7 +5,7 @@ body, html{
 }
 
 #bg{
-  /*background-image: url('/../../assets/images/landingPage.png');*/
+  background-image: url('/../../assets/images/landingPage.png');
   border-radius: 3px;
   height: 400px;
   background-size: cover;
@@ -102,4 +102,20 @@ span {
   border-left: 0px;
   border-right: 0px;
   border-style: solid;
+}
+
+#signUpHead{
+  font-family: 'Raleway', sans-serif;
+  font-weight: bold;
+  text-align: center;
+  font-size: 30px;
+  color:#364f6b;
+}
+
+#loginHead{
+  font-family: 'Raleway', sans-serif;
+  font-weight: bold;
+  text-align: center;
+  font-size: 30px;
+  color:#364f6b;
 }

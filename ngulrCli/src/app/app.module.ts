@@ -21,6 +21,7 @@ import { NotFoundComponent } from './not-found/not-found.component';
 import { ProfileComponent } from './profile/profile.component';
 import { HomeComponent } from './home/home.component';
 import { NavbarComponent } from './navbar/navbar.component';
+import { FilterPipe } from './pipes/filter.pipe';
 //PIPE
 
 @NgModule({
@@ -34,6 +35,7 @@ import { NavbarComponent } from './navbar/navbar.component';
     ProfileComponent,
     HomeComponent,
     NavbarComponent,
+    FilterPipe,
   ],
   imports: [
     BrowserModule,

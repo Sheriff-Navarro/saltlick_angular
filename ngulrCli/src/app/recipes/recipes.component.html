@@ -1,8 +1,9 @@
-<p>
+<body>
+  <p>
   recipes works!
 </p>
 
-<button (click)="logMeOutPls()"> Log Out </button>
+<!-- <button (click)="logMeOutPls()"> Log Out </button>
  <p *ngIf="logoutError" class="error">
    {{ logoutError }}
  </p>
@@ -13,7 +14,65 @@
 
    <p> Here's the user object </p>
    <pre> {{ user | json }} </pre>
+ </div> -->
+  <div class = "row">
+    <div class = "col-sm-12">
+      <button *ngIf="!isShowingForm" (click)="showRecipeForm()">
+        Add Recipe
+      </button>
+    </div>
+  </div>
+
+ <div *ngIf = "isShowingForm">
+   <h3>Create a New Recipe</h3>
+   <p *ngIf = "saveError" class = "error">
+     {{saveError}}
+   </p>
+ <form (ngSubmit) = "saveNewRecipe()">
+   <label for="recipe-name-input"> Recipe Name </label>
+   <input type = "text" id="recipe-name-input" placeholder=" Spaghetti and Meatballs" [(ngModel)] = "recipeInfo.recipeName" name = "recipeName">
+   <br>
+   <label for="recipe-serves-input"> Recipe Serves how many ?  </label>
+   <input type = "text" id="recipe-serves-input" placeholder=" 4" [(ngModel)] = "recipeInfo.recipeServes" name = "recipeServes">
+   <br>
+   <label for="recipe-serves-input"> Prep + Cook Time?  </label>
+   <input type = "text" id="recipe-cookTime-input" placeholder=" 4" [(ngModel)] = "recipeInfo.recipeCookTime" name = "recipeServes"> minutes
+   <br>
+   <label> Ingredients </label>
+   <input type="text" #ingredient />
+   <button (click)="addIngredient(ingredient.value); ingredient.value = '' "> add ingredient </button>
+
+   <ul>
+     <li *ngFor="let ingredient of recipeInfo.recipeIngredients"> {{ ingredient }} </li>
+   </ul>
+   <br>
+   <label> Directions </label>
+   <input type="text" #direction />
+   <button (click)="addDirection(direction.value); direction.value = '' "> add direction </button>
+
+   <ul>
+     <li *ngFor="let direction of recipeInfo.recipeDirections"> {{ direction }} </li>
+   </ul>
+
+   <label for="recipe-picture-input"> Recipe Picture (required)</label>
+     <input  id="recipe-picture-input" type="file" name="recipePictuer"
+         ng2FileSelect [uploader]="myCoolUploader">
+     <br>
+
+     <button> Save Recipe </button>
+ </form>
+
+
  </div>
+<div class="row">
+  <div class="col-sm-4"></div>
+  <div class="col-sm-4">
+      <div class="input-group mb-3">
+        <input id="things_name" type="text" class="form-control" placeholder="Search Recipes" aria-label="Recipient's username" aria-describedby="basic-addon2" [(ngModel)]="pattern">
+      </div>
+  </div>
+  <div class="col-sm-4"></div>
+</div>
 
 
  <p *ngIf="recipeListError" class="error">
@@ -21,20 +80,9 @@
  </p>
 
 
- <!-- <ul>
-  <li *ngFor="let recipe of recipeArray">
-    <h3> {{ recipe.name }} </h3>
-    <img *ngIf = "recipe.picture" [src]="baseUrl + recipe.picture" alt="">
-    <p>
-      Owned by: {{ recipe.user.fullName }}
-    </p>
-    <a [routerLink]="['/recipe', recipe._id]"> View Details </a>
-
-  </li>
-</ul> -->
 <div class="col-sm-1">
 </div>
-<div [routerLink]="['/recipe', recipe._id]" id="eachRecipe"class = "col-sm-3 container" *ngFor = "let recipe of recipeArray">
+<div [routerLink]="['/recipe', recipe._id]" id="eachRecipe"class = "col-sm-3 container" *ngFor = "let recipe of recipeArray | filter: 'name': pattern">
   <div class = "row ">
     <div class="col-sm-12" id="withinRecipe">
       <img *ngIf = "recipe.picture" [src]="baseUrl + recipe.picture" class="img-thumbnail" alt="Responsive image">
@@ -56,7 +104,7 @@
 <div class="col-sm-1">
 </div>
 
-<button *ngIf="!isShowingForm" (click)="showRecipeForm()">
+<!-- <button *ngIf="!isShowingForm" (click)="showRecipeForm()">
   Add Recipe
 </button>
 
@@ -100,4 +148,5 @@
 </form>
 
 
-</div>
+</div> -->
+</body>
