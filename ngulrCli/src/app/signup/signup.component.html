@@ -9,29 +9,73 @@
     {{ errorMessage }}
   </p>
 
-  <form (ngSubmit)="doSignUp()">
-    <label for="full-name-input"> Full Name </label>
-    <input  id="full-name-input" type="text" placeholder="Blanche Bourbon"
-        [(ngModel)]="signUpInfo.fullName" name="fullNameValue">
-    <br>
 
-    <label for="email-input"> Email </label>
-    <input  id="email-input" type="email" placeholder="blah@example.com"
-        [(ngModel)]="signUpInfo.email" name="emailValue">
-    <br>
+  <div class="row" *ngIf = "isShowingForm">
+    <div class = "container">
+     <div class="col-sm-2"></div>
+     <div class="col-sm-8">
+     <div class = "col-sm-12" id="recipeForm">
+          <form (ngSubmit) = "saveNewRecipe()">
+          <div class="form-row">
+            <div class="form-group col-md-6">
+            <label for="recipe-name-input">Recipe Name</label>
+            <input type="email" class="form-control" id="recipe-name-input" placeholder="Spaghetti and Meatballs" [(ngModel)] = "recipeInfo.recipeName" name = "recipeName">
+          </div>
+      <div class="form-group col-md-6">
+          <label for="select">Recipe Type</label>
+          <select class="form-control " id="inputState" [(ngModel)] = "recipeInfo.recipeType">
+            <option selected>Choose...</option>
+            <option>Appetizer</option>
+            <option>Entré</option>
+            <option>Dessert</option>
+            <option>Snack</option>
+            <option>Drink</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-row">
+      <div class="form-group col-md-3">
+        <label for="recipe-serves-input">Serves How Many</label>
+        <input type="text" class="form-control" id="recipe-serves-input" [(ngModel)] = "recipeInfo.recipeServes" name = "recipeServes" placeholder="4">
+      </div>
+      <div class="form-group col-md-3">
+        <label for="recipe-serves-input">Cook Time (Minutes)</label>
+        <input type="text" class="form-control" id="recipe-cookTime-input" [(ngModel)] = "recipeInfo.recipeCookTime" name = "recipeCookTime" placeholder="30">
+      </div>
+      <div class="form-group col-md-6">
+        <label for="inputZip">Zip</label>
+        <input type="text" class="form-control" id="inputZip">
+        <label for="recipe-picture-input"> Recipe Picture (required)</label>
+          <input  id="recipe-picture-input" type="file" name="recipePictuer"
+              ng2FileSelect [uploader]="myCoolUploader">
+          </div>
+          </div>
+      <div class="form-row">
+      <div class="form-group col-md-6">
+        <label> Ingredients  </label><button (click)="addIngredient(ingredient.value); ingredient.value = '' "> add ingredient </button>
+        <input class="form-control" type="text" #ingredient placeholder="2 oz. of butter" />
+        <hr>
+        <ul>
+          <li *ngFor="let ingredient of recipeInfo.recipeIngredients"> {{ ingredient }}
+          <button (click)="removeIngredient(ingredient.value); ingredient.value = '' "> remove ingredient </button> </li>
+        </ul>
+      </div>
+      <div class="form-group col-md-6">
+        <label> Directions </label> <button (click)="addDirection(direction.value); direction.value = '' "> add direction </button>
+        <input class = "form-control" type="text" #direction placeholder="Put butter in saucepan over low heat."/>
+        <hr>
+        <ul>
+          <ul *ngFor="let direction of recipeInfo.recipeDirections let i = index" > {{i + 1}}) {{ direction }} </ul>
+        </ul>
+      </div>
+      </div>
+      <button class = "btn btn-primary"> Save Recipe </button>
+          </form>
 
-    <label for="password-input"> Password </label>
-    <input  id="password-input" type="password" placeholder="*****"
-        [(ngModel)]="signUpInfo.password" name="passwordValue">
-    <br>
-
-    <button> Sign Up </button>
-  </form>
-
-  <div *ngIf="user">
-    <h2> You are now logged in as {{ user.username }}!! </h2>
-    <p> Here's the user object </p>
-    <pre> {{ user | json }} </pre>
+      </div>
+     </div>
+     <div class="col-sm-2"></div>
+    </div>
   </div>
 
 

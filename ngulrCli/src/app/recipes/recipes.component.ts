@@ -29,7 +29,8 @@ export class RecipesComponent implements OnInit {
     recipeCookTime: undefined,
     recipeServes: undefined,
     recipeIngredients: [],
-    recipeDirections: []
+    recipeDirections: [],
+    recipeType: ""
   }
 
   myCoolUploader = new FileUploader({
@@ -100,6 +101,10 @@ addIngredient(ingredient) {
     this.recipeInfo.recipeIngredients.push(ingredient);
   }
 
+// removeIngredient(ingredient){
+//   this.recipeInfo.recipeIngredients.pop();
+// }
+
 addDirection(direction) {
     this.recipeInfo.recipeDirections.push(direction);
   }
@@ -115,7 +120,8 @@ private saveRecipeNoPicture() {
         recipeCookTime: undefined,
         recipeServes: undefined,
         recipeIngredients: [],
-        recipeDirections: []
+        recipeDirections: [],
+        recipeType: ""
       };
       this.saveError = 'There was an error saving the recipe.'
     }
@@ -127,6 +133,7 @@ private saveRecipewithPicture() {
     form.append('recipeName', this.recipeInfo.recipeName);
     form.append('recipeServes', this.recipeInfo.recipeServes);
     form.append('recipeCookTime', this.recipeInfo.recipeCookTime);
+    form.append('recipeType', this.recipeInfo.recipeType);
     form.append('recipeIngredients', JSON.stringify(this.recipeInfo.recipeIngredients));
     form.append('recipeDirections', JSON.stringify(this.recipeInfo.recipeDirections));
 
@@ -141,7 +148,8 @@ private saveRecipewithPicture() {
       recipeCookTime: undefined,
       recipeServes: undefined,
       recipeIngredients: [],
-      recipeDirections: []
+      recipeDirections: [],
+      recipeType: ""
     };
     this.saveError = '';
   };
