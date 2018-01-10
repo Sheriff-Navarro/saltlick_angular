@@ -31,6 +31,8 @@ export class RecipeDetailsComponent implements OnInit {
   currentUser: any = {};
   baseUrl = environment.apiBase;
 
+  isShowingDirections: boolean = false;
+
 
   constructor(
     private routerThang: Router,
@@ -70,6 +72,14 @@ export class RecipeDetailsComponent implements OnInit {
   showReviewForm() {
     this.isShowingForm = true;
   }//close showRecipeForm();
+
+  showDirections() {
+      this.isShowingDirections = true;
+  }
+
+  hideDirections() {
+    this.isShowingDirections = false;
+  }
 
 getParamsId(){
 this.route.params.subscribe(params => {

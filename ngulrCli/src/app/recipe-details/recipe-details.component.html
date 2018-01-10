@@ -1,4 +1,85 @@
-<h1> Phone details </h1>
+  <div *ngIf="recipe" class="container" id="wholeRecipe">
+    <!-- <div class="row">
+      <div class="col-md-3">
+        <span class="glyphicon glyphicon-menu-left"></span>
+      </div>
+    </div> -->
+    <div class="row">
+      <div class="col-md-12">
+        <div class="row">
+        <div class="col-md-12" >
+          <h1 id="recipeName">{{recipe.recipe.name}}</h1>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-7">
+          <img class="img-responsive" *ngIf = "recipe.recipe.picture" [src]="baseUrl + recipe.recipe.picture" alt="">
+        </div>
+        <div class="col-md-5">
+          <!-- <div class="row">
+            <div [routerLink]="['/profile', recipe.recipe.user._id]" class="col-md-12" id="recipeCreator">
+              <span class="glyphicon glyphicon-user"></span> {{recipe.recipe.user.fullName}}
+            </div>
+          </div> -->
+          <div class="row" >
+            <div class="col-md-6" id="recipeCooktime">
+              <span class="glyphicon glyphicon-time"></span> COOK TIME
+              <div class="time"><b>{{recipe.recipe.cookTime}}</b> min.</div>
+            </div>
+            <div class="col-md-6" id="recipeServes">
+              <span class="glyphicon glyphicon-cutlery"> </span> SERVES
+              <div class="serves">{{recipe.recipe.serves}}</div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12">
+              <div class="ingredients">
+                INGREDIENTS
+              </div>
+              <div id="eachIng"*ngFor="let ingredient of recipe.recipe.ingredients"> {{ ingredient }}
+                  <!-- {{recipe.recipe.ingredient}} -->
+              <hr>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div *ngIf="!isShowingDirections" class="row">
+        <div class="col-md-12" id="showFull">
+        <div (click)="showDirections()">SHOW FULL RECIPE</div>
+        <span class="glyphicon glyphicon-collapse-down"  (click)="showDirections()"></span>
+        </div>
+      </div>
+      <div *ngIf="isShowingDirections" class="row">
+        <div class="col-md-12" id="showFull">
+        <div (click)="hideDirections()">HIDE FULL RECIPE</div>
+        <span class="glyphicon glyphicon-collapse-up"  (click)="hideDirections()"></span>
+        </div>
+      </div>
+      <div class="row" *ngIf = "isShowingDirections">
+        <div class="col-md-2"></div>
+        <div class="col-md-8" >
+          <p id="directions">DIRECTIONS</p>
+          <div class="directions"*ngFor="let direction of recipe.recipe.directions let i = index">
+            <span  id="directionNum">{{i+1}}. {{direction}} </span>
+
+          </div>
+        </div>
+        <div class="col-md-2"></div>
+      </div>
+      </div>
+    </div>
+    <!-- end of row -->
+  </div>
+<!-- end of container -->
+
+
+
+
+
+
+
+<!-- <h1> Phone details </h1>
     <a [routerLink]="['']"> Back to list </a>
 
     <div *ngIf="recipe">
@@ -41,10 +122,10 @@
           <br>
           <label for="review-rating-input"> Recipe Review</label>
           <input type="text" id="review-review-input" placeholder = "Write what you liked about the recipe." [(ngModel)] = "reviewInfo.reviewReview" name="reviewReview">
-          <br>
+          <br> -->
           <!-- <input id="review-recipeId-input" name="prodId" type="hidden" value="{{reviewInfo.recipeId}}" [(ngModel)] = "reviewInfo.recipeId"> -->
 
-          <button>Submit Review </button>
+          <!-- <button>Submit Review </button>
         </form>
 
-      </div>
+      </div> -->

@@ -56,9 +56,10 @@ form {
   margin-top: 20px;
   margin-bottom: 15px;
   padding: 10px;
-  background-color: #43DDE6;
-  border-color:#43DDE6;
+  background-color: #FC5185;
+  border-color: #FC5185;
   font-size: 23px;
+  border-radius: 5px;
 
 }
 
@@ -107,6 +108,7 @@ span {
 #signUpHead{
   font-family: 'Raleway', sans-serif;
   font-weight: bold;
+  letter-spacing: 5px;
   text-align: center;
   font-size: 30px;
   color:#364f6b;
@@ -118,4 +120,16 @@ span {
   text-align: center;
   font-size: 30px;
   color:#364f6b;
+}
+
+#already {
+  text-align: center;
+  font-family: 'Open Sans';
+}
+
+
+#alreadyA {
+  text-align: center;
+  font-family: 'Open Sans';
+  color: #66bfbf;
 }
