@@ -92,7 +92,7 @@
   <div class="col-sm-6">
     <!-- Button trigger modal -->
     <button type="button" class="btn btn-primary col-sm-5" id="createRecButt" data-toggle="modal" data-target="#exampleModal">
-    <span class="glyphicon glyphicon-plus"></span> Add Recipe</button>
+    <span class="glyphicon glyphicon-pencil"></span> Create Recipe</button>
 
     <!-- Modal -->
     <div class="modal fade bd-example-modal-lg" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -106,7 +106,6 @@
           </div>
           <div class="modal-body">
             <div id="recipeForm">
-              <h3>Create a New Recipe</h3>
               <p *ngIf = "saveError" class = "error">
                 {{saveError}}
               </p>
@@ -133,7 +132,7 @@
                   <input class = "form-control" type = "text" id="recipe-serves-input" placeholder=" 4" [(ngModel)] = "recipeInfo.recipeServes" name = "recipeServes">
                 </div>
                <div class="form-group col-md-4">
-                 <label for="recipe-serves-input"> Prep + Cook Time?  </label>
+                 <label for="recipe-serves-input"> Cook Time (minutes)  </label>
                  <input class = "form-control" type = "text" id="recipe-cookTime-input" placeholder=" 4" [(ngModel)] = "recipeInfo.recipeCookTime" name = "recipeServes">
                </div>
                <div class="form-group col-md-4">
@@ -146,24 +145,49 @@
                 <div class="form-group col-md-6">
                   <label> Ingredients </label>
                   <input class = "form-control" type="text" #ingredient />
-                  <p class="btn btn-primary" (click)="addIngredient(ingredient.value); ingredient.value = '' "> add ingredient </p>
+                  <div class="row">
+                    <div id="btns"class="col-md-6">
+                      <p id="add1" class="btn btn-primary" (click)="addIngredient(ingredient.value); ingredient.value = '' "><span class="glyphicon glyphicon-plus"></span> Ingredient </p>
+                    </div>
+                    <div id="btns" class="col-md-6">
+                      <p
+                      id="delete" class="btn btn-primary" (click)="removeIngredient(ingredient.value); ingredient.value = '' "><span class="glyphicon glyphicon-minus"></span> Ingredient </p>
+                    </div>
+                  </div>
+
+
                   <hr>
                   <ul>
-                    <li *ngFor="let ingredient of recipeInfo.recipeIngredients"> {{ ingredient }}
-                    <p  (click)="removeIngredient(ingredient.value); ingredient.value = '' "> remove ingredient </p> </li>
+                    <li id="addedPs" *ngFor="let ingredient of recipeInfo.recipeIngredients"> {{ ingredient }}
+                   </li>
+
                   </ul>
                 </div>
                 <div class="form-group col-md-6">
                   <label> Directions </label>
                   <input class = "form-control" type="text" #direction />
-                  <p class="btn btn-primary" (click)="addDirection(direction.value); direction.value = '' "> add direction </p>
+                  <div class="row">
+                    <div class="col-md-6" >
+                      <p id="add2" class="btn btn-primary" (click)="addDirection(direction.value); direction.value = '' "><span class="glyphicon glyphicon-plus"></span> Direction </p>
+                    </div>
+                    <div class="col-md-6" id="btns">
+                      <p id="delete" class="btn btn-primary" (click)="removeDirection(direction.value); direction.value = '' "><span class="glyphicon glyphicon-minus"></span> Direction </p>
+                    </div>
+                  </div>
+
                   <hr>
                   <ul>
-                    <ul *ngFor="let direction of recipeInfo.recipeDirections let i = index" > {{i + 1}}) {{ direction }} </ul>
+                    <ul id="addedPs" *ngFor="let direction of recipeInfo.recipeDirections let i = index" > {{i + 1}}) {{ direction }} </ul>
                   </ul>
                 </div>
               </div>
-                <button data-dismiss="modal"> Save Recipe </button>
+              <div class="form-row">
+                <div class="col-md-9"></div>
+                <div class="col-md-3">
+                  <button class="btn btn-primary save" type="button" (click)='saveNewRecipe()' data-dismiss="modal"> <span class="glyphicon glyphicon-ok"></span> Save Recipe </button>
+                </div>
+              </div>
+
             </form>
             </div>
           </div>
@@ -175,7 +199,7 @@
       </div>
     </div>
       <div class="input-group col-sm-7">
-        <input id="things_name" type="text" class="form-control" placeholder="Search Recipes" aria-label="Recipient's username" aria-describedby="basic-addon2" [(ngModel)]="pattern">
+        <input *ngIf="isShowingSearch" id="things_name" type="text" class="form-control" placeholder="Filter Recipes" aria-label="Recipient's username" aria-describedby="basic-addon2" [(ngModel)]="pattern">
       </div>
   </div>
 </div>
@@ -210,7 +234,7 @@
     <div class="row">
       <div class="col-sm-12">
       <p id="recipeNamed" [routerLink]="['/recipe', recipe._id]">{{recipe.name}}</p>
-      <p id="cookTime"> Cook Time: <b >{{recipe.cookTime}}</b> Minutes </p>
+      <p id="cookTime"> <span class = "	glyphicon glyphicon-time"></span> <b >{{recipe.cookTime}}</b> Minutes </p>
       <p id="recipeCreator">Recipe Creator: <b id="creator1"     [routerLink]="['/profile', recipe.user._id]"
       >{{recipe.user.fullName}}</b></p>
       </div>

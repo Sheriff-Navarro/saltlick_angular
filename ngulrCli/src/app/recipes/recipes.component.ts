@@ -23,6 +23,7 @@ export class RecipesComponent implements OnInit {
   recipeListError: string;
 
   isShowingForm: boolean = false;
+  isShowingSearch: boolean = true;
 
   recipeInfo = {
     recipeName: "",
@@ -86,6 +87,14 @@ export class RecipesComponent implements OnInit {
     this.isShowingForm = true;
   }//close showRecipeForm();
 
+showSearch(){
+  this.isShowingSearch =true;
+}
+
+closeSearch() {
+  this.isShowingSearch = false;
+}
+
   saveNewRecipe() {
     //if no recipe, regular AJAX upload
     if (this.myCoolUploader.getNotUploadedItems().length===0){
@@ -101,13 +110,17 @@ addIngredient(ingredient) {
     this.recipeInfo.recipeIngredients.push(ingredient);
   }
 
-// removeIngredient(ingredient){
-//   this.recipeInfo.recipeIngredients.pop();
-// }
+removeIngredient(ingredient){
+  this.recipeInfo.recipeIngredients.pop();
+}
 
 addDirection(direction) {
     this.recipeInfo.recipeDirections.push(direction);
   }
+
+removeDirection(ingredient) {
+  this.recipeInfo.recipeDirections.pop();
+}
 
 private saveRecipeNoPicture() {
   this.recipeThang.newRecipe(this.recipeInfo)

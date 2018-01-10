@@ -58,6 +58,7 @@ hr {
 
 #eachRecipe:hover {
   box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+
 }
 
 #withinRecipe {
@@ -75,14 +76,14 @@ hr {
 
 #cookTime {
   margin: 15px;
-  font-family: 'Raleway', sans-serif;
+  font-family: 'Open Sans', sans-serif;
   font-size: 18px;
 }
 
 #recipeCreator {
   margin: 15px;
   font-size: 16px;
-  font-family: 'Raleway', sans-serif;
+  font-family: 'Open Sans', sans-serif;
 }
 
 #creator1{
@@ -92,6 +93,7 @@ hr {
 
 #cookTime1 {
   color: #43DDE6;
+  font-family: 'Open Sans';
 }
 
 #things_name {
@@ -108,7 +110,7 @@ hr {
   padding: 8px;
   border-radius: 5px;
   font-size: 17px;
-  font-family: Raleway;
+  font-family: 'Open Sans';
   text-align: center;
   font-weight: bold;
   background-color: #66bfbf;
@@ -120,7 +122,7 @@ hr {
   padding: 8px;
   border-radius: 5px;
   font-size: 17px;
-  font-family: Raleway;
+  font-family: 'Open Sans';
   text-align: center;
   font-weight: bold;
   background-color: #66bfbf;
@@ -143,12 +145,129 @@ hr {
   margin: 10px;
 }
 
+label {
+  font-family: 'Open Sans';
+  font-size: 18px;
+  color: #5d5e60;
+}
+
 #pageHead {
-  font-family: Raleway;
+  font-family: 'Raleway';
     font-size: 26px;
     font-weight: 400;
     letter-spacing: 5px;
     position: relative;
     top: 15px;
+}
 
+#exampleModalLabel {
+    font-family: Raleway;
+    font-size: 26px;
+    font-weight: 400;
+    letter-spacing: 5px;
+    position: relative;
+    top: 15px;
+    color: white;
+  }
+
+  .modal-header{
+    background-color: #66bfbf;
+  }
+
+  .close {
+    font-size: 29px;
+  }
+
+input {
+  padding:10px;
+  font-size: 20px
+}
+
+#recipeType {
+  font-size: 16px;
+  font-family: 'Open Sans';
+}
+
+#add1 {
+  background-color: white;
+  margin-top: 15px;
+  font-size: 18px;
+  font-family: 'Open Sans';
+  border-color: rgb(38,204,110);
+  padding-top: 5px;
+  margin-left: 15px;
+  color:rgb(38,204,110);
+}
+
+#add2 {
+  background-color: white;
+  margin-top: 15px;
+  font-size: 18px;
+  font-family: 'Open Sans';
+  border-color: rgb(38,204,110);
+  padding-top: 5px;
+  color:rgb(38,204,110);
+}
+#btns{
+  padding: 1px;
+}
+
+
+
+#delete {
+  background-color: white;
+  margin-top: 15px;
+  font-size: 18px;
+  font-family: 'Open Sans';
+  color: rgba(204,38,38,.8);
+  border-color: rgba(204,38,38,.8);
+  padding-top: 5px;
+  margin-left: 1px;
+}
+
+#addedPs {
+  margin-top: 15px;
+  padding: 0px;
+  font-size: 18px;
+  font-family: 'Open Sans';
+}
+
+li {
+  padding: 5px;
+  margin-top: 15px;
+  font-size: 18px;
+  font-family: 'Open Sans';
+  margin-left: 20px;
+}
+
+ul {
+  padding: 0px;
+  margin-top: 15px;
+  font-size: 18px;
+  font-family: 'Open Sans';
+}
+
+.save {
+  background-color: #FC5185;
+  border-color: #FC5185;
+  color: white;
+  margin-top: 15px;
+  font-size: 18px;
+  font-family: 'Open Sans';
+  padding-top: 5px;
+}
+
+.save:hover {
+  background-color: #FC5185;
+  border-color: #FC5185;
+  color: white;
+  margin-top: 15px;
+  font-size: 18px;
+  font-family: 'Open Sans';
+  padding-top: 5px;
+  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+}
+
+#recipe-picture-input {
+  padding: 0px;
 }
