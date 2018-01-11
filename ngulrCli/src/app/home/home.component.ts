@@ -28,7 +28,8 @@ export class HomeComponent implements OnInit {
   signUpInfo = {
     fullName: '',
     email: '',
-    password: ''
+    password: '',
+    picture: ''
   };
 
   myCoolUploader = new FileUploader({
@@ -78,7 +79,8 @@ export class HomeComponent implements OnInit {
              this.signUpInfo = {
                fullName: '',
                email: '',
-               password: ''
+               password: '',
+               picture: ''
              };
 
              // clear error message

@@ -155,7 +155,7 @@
         <div class="col-md-12">
           <div class="row">
           <div class="col-md-6">
-            <img src="../../assets/images/user.svg" class="img-rounded" >
+            <img src="{{review.user.picture}}" class="img-rounded" >
             <span id="reviewName">{{review.user.fullName}}</span>
           </div>
           <div class="col-md-3"></div>
@@ -285,9 +285,9 @@
                 <br>
                 <input id="review-recipeId-input" name="prodId" type="hidden" value="{{reviewInfo.recipeId}}" [(ngModel)] = "reviewInfo.recipeId">
 
-                <button class="btn btn-primary save" type="button" (click)='getParamsId()'
+                <button class="btn btn-primary save pull-right" type="button" (click)='getParamsId()'
                 (click)='saveNewReview()'
-                 data-dismiss="modal"> <span class="glyphicon glyphicon-ok"></span> Post Review </button>
+                 data-dismiss="modal"> <span class="glyphicon glyphicon-ok"></span> Save Rating </button>
                 <!-- <button>Submit Review </button> -->
               </form>
             </div>

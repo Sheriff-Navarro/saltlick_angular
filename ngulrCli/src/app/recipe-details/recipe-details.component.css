@@ -248,9 +248,9 @@ color:#FC5185;
 }
 
 .save:hover {
-  background-color: white;
+  background-color: #FC5185;
   border-color: #FC5185;
-  color: #FC5185;
+  color: white;
   margin-top: 15px;
   font-size: 18px;
   font-family: 'Open Sans';

@@ -20,7 +20,8 @@ return this.httpThang
     {
     signupFullName: componentInfo.fullName,
     signupEmail: componentInfo.email,
-    signupPassword: componentInfo.password
+    signupPassword: componentInfo.password,
+    signupPicture: componentInfo.picture
   },
 
   //Send the cookies across domains

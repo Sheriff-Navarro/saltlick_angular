@@ -199,6 +199,17 @@ input {
   color:rgb(38,204,110);
 }
 
+#add1:hover {
+  background-color: rgb(38,204,110);
+  color:white;
+  border-color: rgb(38,204,110);
+  margin-top: 15px;
+  font-size: 18px;
+  font-family: 'Open Sans';
+  padding-top: 5px;
+  margin-left: 15px;
+}
+
 #add2 {
   background-color: white;
   margin-top: 15px;
@@ -207,6 +218,17 @@ input {
   border-color: rgb(38,204,110);
   padding-top: 5px;
   color:rgb(38,204,110);
+}
+
+#add2:hover {
+  background-color: rgb(38,204,110);
+  color:white;
+  border-color: rgb(38,204,110);
+  margin-top: 15px;
+  font-size: 18px;
+  font-family: 'Open Sans';
+  border-color: rgb(38,204,110);
+  padding-top: 5px;
 }
 #btns{
   padding: 1px;
@@ -220,6 +242,17 @@ input {
   font-size: 18px;
   font-family: 'Open Sans';
   color: rgba(204,38,38,.8);
+  border-color: rgba(204,38,38,.8);
+  padding-top: 5px;
+  margin-left: 1px;
+}
+
+#delete:hover {
+  background-color: rgba(204,38,38,.8);;
+  margin-top: 15px;
+  font-size: 18px;
+  font-family: 'Open Sans';
+  color: white;
   border-color: rgba(204,38,38,.8);
   padding-top: 5px;
   margin-left: 1px;
@@ -258,9 +291,9 @@ ul {
 }
 
 .save:hover {
-  background-color: white;
+  background-color: #66bfbf;
   border-color: #66bfbf;
-  color: #66bfbf;
+  color: white;
   margin-top: 15px;
   font-size: 18px;
   font-family: 'Open Sans';
