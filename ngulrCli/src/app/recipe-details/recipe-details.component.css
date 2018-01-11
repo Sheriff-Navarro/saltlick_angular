@@ -6,7 +6,7 @@ body {
   font-family: 'Raleway';
   font-size: 45px;
   color: grey;
-  margin-bottom: 45px;
+  margin-bottom: 15px;
   letter-spacing: 5px;
   font-weight: bold;
   padding-left: 25px;
@@ -33,7 +33,7 @@ label {
 }
 
 #recipeCreator {
-  margin-bottom:30px;
+  margin-bottom:15px;
   font-size: 27px;
   font-family: 'Open Sans';
   color:
@@ -173,6 +173,8 @@ color:#FC5185;
 #reviewName {
   font-family: 'Open Sans';
   font-size: 25px;
+  color: grey;
+  margin: 10px;
   /* margin: 15px 0px 10px 0px; */
 }
 
@@ -191,9 +193,14 @@ color:#FC5185;
 
 }
 
-.img-rounded {
+.img-circle {
   height:65px;
   width: 65px;
+}
+
+.crtr {
+  height:45px;
+  width: 45px;
 }
 
 .glyphicon-star{
@@ -287,4 +294,8 @@ input {
 
   .close {
     font-size: 29px;
+  }
+
+  #recipeCreator {
+    padding-left: 25px;
   }

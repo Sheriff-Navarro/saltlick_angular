@@ -45,6 +45,11 @@ hr {
   padding: 0px;
 }
 
+.img-circle {
+  height: 30px;
+  width: 30px;
+}
+
 #eachRecipe {
   /*border: 1px;
   border-style: solid;*/
@@ -81,7 +86,8 @@ hr {
 }
 
 #recipeCreator {
-  margin: 15px;
+  margin: 0px;
+  margin-bottom: 10px;
   font-size: 16px;
   font-family: 'Open Sans', sans-serif;
 }
