@@ -148,3 +148,51 @@ color:#FC5185;
     letter-spacing: 3px;
     border-bottom: 1px solid #bdbfc1;
 }
+
+#allReviews {
+  margin-top: 25px;
+  padding-bottom: 20px;
+  /* border-radius: 5px; */
+  /* background-color: #dce8f4; */
+}
+
+#eachReview{
+  padding: 25px 0px 10px 25px;
+  margin-bottom: 25px;
+  background-color: white;
+  /* margin-top: 20px; */
+}
+
+#reviewName {
+  font-family: 'Open Sans';
+  font-size: 25px;
+  /* margin: 15px 0px 10px 0px; */
+}
+
+#reviewRating {
+  margin: 15px 0px 10px 0px;
+  font-family: 'Open Sans';
+  font-size: 20px;
+  color:#f4ce42;
+}
+
+#reviewReview {
+  font-family: 'Open Sans';
+  margin-top: 15px;
+  font-size: 22px;
+  /* padding-left: 30px; */
+
+}
+
+.img-rounded {
+  height:65px;
+  width: 65px;
+}
+
+.glyphicon-star{
+  color: gold;
+
+}
+#emptyStar {
+  color: #d6d6cf;
+}

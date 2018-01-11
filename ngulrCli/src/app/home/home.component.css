@@ -1,11 +1,15 @@
 body, html{
-  height: 100%;
+  height: auto;
   font-family: 'Raleway', sans-serif;
+  /* background-image: url('../../assets/images/landingPage.png'); */
 
 }
 
+#homeComp {
+  /* background-image: url('/assets/images/landingPage.png'); */
+}
+
 #bg{
-  background-image: url('/../../assets/images/landingPage.png');
   border-radius: 3px;
   height: 400px;
   background-size: cover;

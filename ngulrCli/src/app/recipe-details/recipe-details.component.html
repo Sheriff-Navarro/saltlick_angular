@@ -73,10 +73,137 @@
   </div>
 <!-- end of container -->
 
+<!-- <div id="allReviews"class="container"> -->
+  <!-- <div class="row">
+    <div class="col-md-2">
+    </div>
+    <div class="col-md-9">
+      <div class="row">
+        <div id="eachReview" *ngFor="let review of recipe.review" class="row">
+          <div class="col-md-1">
 
+          </div>
+          <div id="reviewName" class="col-md-7">
+            <img src="../../assets/images/user.svg" class="img-rounded" >
+            <span>{{review.user.fullName}}</span>
+          </div>
+          <div id="reviewRating"class="col-md-3" [ngSwitch]="review.rating" >
+            <div id="reviewRating" *ngSwitchCase="1" >
+              <span class="glyphicon glyphicon-star"></span>
+              <span id="emptyStar" class="glyphicon glyphicon-star"></span>
+              <span id="emptyStar" class="glyphicon glyphicon-star"></span>
+              <span id="emptyStar" class="glyphicon glyphicon-star"></span>
+              <span id="emptyStar" class="glyphicon glyphicon-star"></span>
+            </div>
+            <div id="reviewRating" *ngSwitchCase="2" >
+              <span class="glyphicon glyphicon-star"></span>
+              <span class="glyphicon glyphicon-star"></span>
+              <span id="emptyStar" class="glyphicon glyphicon-star"></span>
+              <span id="emptyStar" class="glyphicon glyphicon-star"></span>
+              <span id="emptyStar" class="glyphicon glyphicon-star"></span>
+            </div>
+            <div id="reviewRating" *ngSwitchCase="3" >
+              <span class="glyphicon glyphicon-star"></span>
+              <span class="glyphicon glyphicon-star"></span>
+              <span class="glyphicon glyphicon-star"></span>
+              <span id="emptyStar" class="glyphicon glyphicon-star"></span>
+              <span id="emptyStar" class="glyphicon glyphicon-star"></span>
+            </div>
+            <div id="reviewRating" *ngSwitchCase="4" >
+              <span class="glyphicon glyphicon-star"></span>
+              <span class="glyphicon glyphicon-star"></span>
+              <span class="glyphicon glyphicon-star"></span>
+              <span class="glyphicon glyphicon-star"></span>
+              <span id="emptyStar" class="glyphicon glyphicon-star"></span>
+            </div>
+            <div id="reviewRating" *ngSwitchCase="5" >
+              <span class="glyphicon glyphicon-star"></span>
+              <span class="glyphicon glyphicon-star"></span>
+              <span class="glyphicon glyphicon-star"></span>
+              <span class="glyphicon glyphicon-star"></span>
+              <span class="glyphicon glyphicon-star"></span>
+            </div>
+          </div>
+          <div class="col-md-1">
+          </div>
+          <div class="row">
+            <div class="col-md-1">
+            </div>
+            <div id="reviewReview"class="col-md-10">
+              {{review.review}}
+            </div>
+            <div class="col-md-1">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div> -->
 
-
-
+<div class="container" id="allReviews">
+  <div class="row">
+    <div class="col-md-2"></div>
+    <div class="col-md-8">
+      <div class="row" id="eachReview" *ngFor="let review of recipe.review">
+        <div class="col-md-12">
+          <div class="row">
+          <div class="col-md-6">
+            <img src="../../assets/images/user.svg" class="img-rounded" >
+            <span id="reviewName">{{review.user.fullName}}</span>
+          </div>
+          <div class="col-md-3"></div>
+          <div class="col-md-3" [ngSwitch]="review.rating">
+            <div id="reviewRating" *ngSwitchCase="1" >
+              <span class="glyphicon glyphicon-star  "></span>
+              <span id="emptyStar" class="glyphicon glyphicon-star "></span>
+              <span id="emptyStar" class="glyphicon glyphicon-star "></span>
+              <span id="emptyStar" class="glyphicon glyphicon-star "></span>
+              <span id="emptyStar" class="glyphicon glyphicon-star "></span>
+            </div>
+            <div id="reviewRating" *ngSwitchCase="2" >
+              <span class="glyphicon glyphicon-star "></span>
+              <span class="glyphicon glyphicon-star "></span>
+              <span id="emptyStar" class="glyphicon glyphicon-star "></span>
+              <span id="emptyStar" class="glyphicon glyphicon-star "></span>
+              <span id="emptyStar" class="glyphicon glyphicon-star "></span>
+            </div>
+            <div id="reviewRating" *ngSwitchCase="3" >
+              <span class="glyphicon glyphicon-star "></span>
+              <span class="glyphicon glyphicon-star "></span>
+              <span class="glyphicon glyphicon-star "></span>
+              <span id="emptyStar" class="glyphicon glyphicon-star "></span>
+              <span id="emptyStar" class="glyphicon glyphicon-star "></span>
+            </div>
+            <div id="reviewRating" *ngSwitchCase="4" >
+              <span class="glyphicon glyphicon-star "></span>
+              <span class="glyphicon glyphicon-star "></span>
+              <span class="glyphicon glyphicon-star "></span>
+              <span class="glyphicon glyphicon-star "></span>
+              <span id="emptyStar" class="glyphicon glyphicon-star "></span>
+            </div>
+            <div id="reviewRating" *ngSwitchCase="5" >
+              <span class="glyphicon glyphicon-star "></span>
+              <span class="glyphicon glyphicon-star "></span>
+              <span class="glyphicon glyphicon-star "></span>
+              <span class="glyphicon glyphicon-star "></span>
+              <span class="glyphicon glyphicon-star "></span>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div id="reviewReview"class="col-md-12">
+            "{{review.review}}"
+          </div>
+        </div>
+      </div>
+     </div>
+    </div>
+    <div class="col-md-2"></div>
+  </div>
+  <!-- //end of outer row -->
+</div>
+<!-- end of whole container -->
 
 
 <!-- <h1> Phone details </h1>
@@ -93,19 +220,19 @@
         <h3> Cook Time {{ recipe.recipe.cookTime }} </h3>
         <h3> Serves {{ recipe.recipe.serves }} </h3>
       </div>
-      <hr>
+      <hr> -->
 
-      <div *ngFor="let review of recipe.review">
+      <!-- <div *ngFor="let review of recipe.review">
       <h2> Review {{ review.review }}&nbsp;</h2>
       <h2> Rating {{ review.rating }}&nbsp;</h2>
-      <a [routerLink]="['/profile', review.user._id]"> Review Creator {{ review.user.fullName }} </a>
+      <a [routerLink]="['/profile', review.user._id]"> Review Creator {{ review.user.fullName }} </a> -->
 
-      <div class="phone-thumbnail">
+      <!-- <div class="phone-thumbnail">
       <img height="50" [src]="review.creatorThumbnail" />
       </div>
-      <hr>
-      </div>
-      </div>
+      <hr> -->
+      <!-- </div>
+      </div> -->
       <button *ngIf="!isShowingForm" (click)="showReviewForm()">
         Add Review
       </button>
@@ -122,10 +249,10 @@
           <br>
           <label for="review-rating-input"> Recipe Review</label>
           <input type="text" id="review-review-input" placeholder = "Write what you liked about the recipe." [(ngModel)] = "reviewInfo.reviewReview" name="reviewReview">
-          <br> -->
-          <!-- <input id="review-recipeId-input" name="prodId" type="hidden" value="{{reviewInfo.recipeId}}" [(ngModel)] = "reviewInfo.recipeId"> -->
+          <br>
+          <input id="review-recipeId-input" name="prodId" type="hidden" value="{{reviewInfo.recipeId}}" [(ngModel)] = "reviewInfo.recipeId">
 
-          <!-- <button>Submit Review </button>
+          <button>Submit Review </button>
         </form>
 
-      </div> -->
+      </div>
