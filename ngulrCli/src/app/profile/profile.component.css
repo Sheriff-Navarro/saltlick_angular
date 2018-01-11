@@ -1,0 +1,19 @@
+#profileSideBar{
+  background-color: white;
+  /* padding: 15px; */
+  height: 250px;
+}
+
+#profileImg {
+  margin-top: 25px;
+  height: 120px;
+  width: 120px;
+}
+
+#profileName {
+  font-family: 'Raleway';
+  font-size: 23px;
+  text-align: center;
+  margin-top: 20px;
+
+}

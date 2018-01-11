@@ -1,6 +1,30 @@
-<p>
-  profile works!
-</p>
+<div class="container">
+  <div class="row">
+    <div class="col-md-3">
+      <div id="profileSideBar" class="row">
+        <div class="col-md-12">
+          <img id="profileImg" src="{{data.user.picture}}" class="img-circle crtr center-block img-responsive" >
+          <div id="profileName"class="col-md-12">
+            {{data.user.fullName}}
+          </div>
+
+        </div>
+      </div>
+    </div>
+    <div class="col-md-9">
+
+    </div>
+  </div>
+
+</div>
+
+
+
+<!-- {{data.user.fullName}}
+{{data.user.picture}} -->
+
+
+<!--
 
 <ul>
  <li *ngFor="let recipe of userRecipeArray">
@@ -12,4 +36,4 @@
    <a [routerLink]="['/recipe', recipe._id]"> View Details </a>
 
  </li>
-</ul>
+</ul> -->
