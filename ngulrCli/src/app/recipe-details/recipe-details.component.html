@@ -7,8 +7,14 @@
     <div class="row">
       <div class="col-md-12">
         <div class="row">
-        <div class="col-md-12" >
+        <div class="col-md-7 float-left" >
           <h1 id="recipeName">{{recipe.recipe.name}}</h1>
+        </div>
+        <div class="col-md-1">
+        </div>
+        <div class="col-md-4">
+          <button type="button" class="btn btn-primary pull-right" id="createRecButt" data-toggle="modal" data-target="#exampleModal">
+          <span id="whiteStar"class="glyphicon glyphicon-star"></span>Rate Recipe</button>
         </div>
       </div>
       <div class="row">
@@ -233,11 +239,11 @@
       <hr> -->
       <!-- </div>
       </div> -->
-      <button *ngIf="!isShowingForm" (click)="showReviewForm()">
+      <!-- <button *ngIf="!isShowingForm" (click)="showReviewForm()">
         Add Review
       </button>
-      <hr>
-      <div *ngIf = "isShowingForm">
+      <hr> -->
+      <!-- <div *ngIf = "isShowingForm">
         <h3>Create a New Review</h3>
         <p *ngIf = "saveError " class = "error">
         {{saveError}}</p>
@@ -252,7 +258,43 @@
           <br>
           <input id="review-recipeId-input" name="prodId" type="hidden" value="{{reviewInfo.recipeId}}" [(ngModel)] = "reviewInfo.recipeId">
 
-          <button>Submit Review </button>
+          <button >Submit Review </button>
         </form>
+      </div> -->
+<!--
+      <button type="button" class="btn btn-primary col-sm-5" id="createRecButt" data-toggle="modal" data-target="#exampleModal">
+      <span class="glyphicon glyphicon-pencil"></span> Create Recipe</button> -->
 
+      <div class="modal fade bd-example-modal-lg" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel"> Write a Review</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <form (ngSubmit) ="getParamsId()" (ngSubmit) ="saveNewReview()" >
+                <label for="review-rating-input"> Recipe Rating </label>
+                <input class="form-control" type="number" id="review-rating-input"
+                placeholder ="How many stars (1-5) ?" [(ngModel)]="reviewInfo.reviewRating" name="reviewRating">
+                <br>
+                <label for="review-rating-input"> Recipe Review</label>
+                <input class="form-control" type="text" id="review-review-input" placeholder = "Write what you liked about the recipe." [(ngModel)] = "reviewInfo.reviewReview" name="reviewReview">
+                <br>
+                <input id="review-recipeId-input" name="prodId" type="hidden" value="{{reviewInfo.recipeId}}" [(ngModel)] = "reviewInfo.recipeId">
+
+                <button class="btn btn-primary save" type="button" (click)='getParamsId()'
+                (click)='saveNewReview()'
+                 data-dismiss="modal"> <span class="glyphicon glyphicon-ok"></span> Post Review </button>
+                <!-- <button>Submit Review </button> -->
+              </form>
+            </div>
+            <!-- <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary">Save changes</button>
+            </div> -->
+          </div>
+        </div>
       </div>

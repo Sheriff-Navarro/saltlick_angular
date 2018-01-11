@@ -2,19 +2,26 @@ body {
   padding: 20px;
 }
 #recipeName {
-  text-align: center;
+  text-align: left;
   font-family: 'Raleway';
   font-size: 45px;
   color: grey;
   margin-bottom: 45px;
   letter-spacing: 5px;
   font-weight: bold;
+  padding-left: 25px;
 
 }
 
 img {
   width: 750px;
   height: auto;
+}
+
+label {
+  font-family: 'Open Sans';
+  font-size: 18px;
+  color: #5d5e60;
 }
 
 
@@ -196,3 +203,88 @@ color:#FC5185;
 #emptyStar {
   color: #d6d6cf;
 }
+
+#createRecButt{
+  margin-top: 25px;
+  margin-right: 20px;
+  border-radius: 5px;
+  font-size: 17px;
+  font-family: 'Open Sans';
+  text-align: center;
+  font-weight: bold;
+  color: white;
+  background-color: #FC5185;
+  border-color: #FC5185;
+}
+
+#createRecButt:hover {
+  margin-top: 25px;
+  margin-right: 20px;
+  border-radius: 5px;
+  font-size: 17px;
+  font-family: 'Open Sans';
+  text-align: center;
+  font-weight: bold;
+  color: white;
+  background-color: #FC5185;
+  border-color: #FC5185;
+  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+
+}
+
+#whiteStar{
+  color: white;
+}
+
+
+.save {
+  background-color: white;
+  border-color: #FC5185;
+  color: #FC5185;
+  margin-top: 15px;
+  font-size: 18px;
+  font-family: 'Open Sans';
+  padding-top: 5px;
+}
+
+.save:hover {
+  background-color: white;
+  border-color: #FC5185;
+  color: #FC5185;
+  margin-top: 15px;
+  font-size: 18px;
+  font-family: 'Open Sans';
+  padding-top: 5px;
+  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+}
+
+input {
+  padding:10px;
+  font-size: 20px
+}
+
+#review-review-input {
+  padding:10px;
+  font-size: 20px;
+  height:60px;
+  text-align: left;
+  vertical-align: top;
+}
+
+#exampleModalLabel {
+    font-family: Raleway;
+    font-size: 26px;
+    font-weight: 400;
+    letter-spacing: 5px;
+    position: relative;
+    top: 15px;
+    color: white;
+  }
+
+  .modal-header{
+    background-color: #FC5185;
+  }
+
+  .close {
+    font-size: 29px;
+  }

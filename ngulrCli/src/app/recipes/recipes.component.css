@@ -248,9 +248,9 @@ ul {
 }
 
 .save {
-  background-color: #FC5185;
-  border-color: #FC5185;
-  color: white;
+  background-color: white;
+  border-color: #66bfbf;
+  color: #66bfbf;
   margin-top: 15px;
   font-size: 18px;
   font-family: 'Open Sans';
@@ -258,9 +258,9 @@ ul {
 }
 
 .save:hover {
-  background-color: #FC5185;
-  border-color: #FC5185;
-  color: white;
+  background-color: white;
+  border-color: #66bfbf;
+  color: #66bfbf;
   margin-top: 15px;
   font-size: 18px;
   font-family: 'Open Sans';
