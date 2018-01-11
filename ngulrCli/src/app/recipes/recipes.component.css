@@ -90,6 +90,8 @@ hr {
   margin-bottom: 10px;
   font-size: 16px;
   font-family: 'Open Sans', sans-serif;
+  color: grey;
+
 }
 
 #creator1{
@@ -119,8 +121,8 @@ hr {
   font-family: 'Open Sans';
   text-align: center;
   font-weight: bold;
-  background-color: #66bfbf;
-  border-color: #66bfbf;
+  background-color: #FC5185;
+  border-color: #FC5185;
   /*margin:0px 5px;*/
 }
 
@@ -131,8 +133,8 @@ hr {
   font-family: 'Open Sans';
   text-align: center;
   font-weight: bold;
-  background-color: #66bfbf;
-  border-color: #66bfbf;
+  background-color: #FC5185;
+  border-color: #FC5185;
   box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
   /*margin:0px 5px;*/
 }

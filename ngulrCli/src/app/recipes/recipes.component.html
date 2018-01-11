@@ -236,7 +236,7 @@
       <p id="recipeNamed" [routerLink]="['/recipe', recipe._id]">{{recipe.name}}</p>
       <p id="cookTime"> <span class = "	glyphicon glyphicon-time"></span> <b >{{recipe.cookTime}}</b> Minutes </p>
       <div id="recipeCreator"class="row">
-        <div [routerLink]="['/profile', recipe.user._id]" class="col-md-12">
+        <div [routerLink]="['/profile', recipe.user._id]" class="col-md-12 rcpeCrtr" >
           <img src="{{recipe.user.picture}}" class="img-circle crtr" >
           <span id="reviewName">{{recipe.user.fullName}}</span>
         </div>
