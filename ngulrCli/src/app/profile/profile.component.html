@@ -7,7 +7,11 @@
           <div id="profileName"class="col-md-12">
             {{data.user.fullName}}
           </div>
-
+          <div class="col-sm-2"></div>
+        <button type="button" class="btn btn-primary col-sm-8" id="createRecButt" data-toggle="modal" data-target="#exampleModal" style="
+          margin-top: 40px;">
+          <span class="glyphicon glyphicon-plus"></span>  Recipe</button>
+      	<div class="col-sm-2"></div>
         </div>
       </div>
     </div>
@@ -16,6 +20,107 @@
     </div>
   </div>
 
+</div>
+
+<!-- Modal -->
+<div class="modal fade bd-example-modal-lg" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel"> Create a Recipe</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div id="recipeForm">
+          <p *ngIf = "saveError" class = "error">
+            {{saveError}}
+          </p>
+        <form (ngSubmit) = "saveNewRecipe()">
+          <div class="form-row">
+            <div class = "form-group col-md-6">
+            <label for="recipe-name-input"> Recipe Name </label>
+            <input class = "form-control" type = "text" id="recipe-name-input" placeholder=" Spaghetti and Meatballs" [(ngModel)] = "recipeInfo.recipeName" name = "recipeName">
+          </div>
+          <div class = "form-group col-md-6">
+                <label for="exampleFormControlSelect1">Recipe Type</label>
+                <select class="form-control" id="recipeType" [(ngModel)] = "recipeInfo.recipeType" name="recipeType">
+                  <option>Appetizer</option>
+                  <option>Entré</option>
+                  <option>Dessert</option>
+                  <option>Snack</option>
+                  <option>Drink</option>
+                </select>
+          </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group col-md-4">
+              <label for="recipe-serves-input"> Recipe Serves how many ?  </label>
+              <input class = "form-control" type = "text" id="recipe-serves-input" placeholder=" 4" [(ngModel)] = "recipeInfo.recipeServes" name = "recipeServes">
+            </div>
+           <div class="form-group col-md-4">
+             <label for="recipe-serves-input"> Cook Time (minutes)  </label>
+             <input class = "form-control" type = "text" id="recipe-cookTime-input" placeholder=" 4" [(ngModel)] = "recipeInfo.recipeCookTime" name = "recipeServes">
+           </div>
+           <div class="form-group col-md-4">
+             <label for="recipe-picture-input"> Recipe Picture (required)</label>
+           <input id="recipe-picture-input" type="file" name="recipePictuer"
+                   ng2FileSelect [uploader]="myCoolUploader">
+           </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <label> Ingredients </label>
+              <input class = "form-control" type="text" #ingredient />
+              <div class="row">
+                <div id="btns"class="col-md-6">
+                  <p id="add1" class="btn btn-primary" (click)="addIngredient(ingredient.value); ingredient.value = '' "><span class="glyphicon glyphicon-plus"></span> Ingredient </p>
+                </div>
+                <div id="btns" class="col-md-6">
+                  <p
+                  id="delete" class="btn btn-primary" (click)="removeIngredient(ingredient.value); ingredient.value = '' "><span class="glyphicon glyphicon-minus"></span> Ingredient </p>
+                </div>
+              </div>
+
+
+              <hr>
+              <ul>
+                <li id="addedPs" *ngFor="let ingredient of recipeInfo.recipeIngredients"> {{ ingredient }}
+               </li>
+
+              </ul>
+            </div>
+            <div class="form-group col-md-6">
+              <label> Directions </label>
+              <input class = "form-control" type="text" #direction />
+              <div class="row">
+                <div class="col-md-6" >
+                  <p id="add2" class="btn btn-primary" (click)="addDirection(direction.value); direction.value = '' "><span class="glyphicon glyphicon-plus"></span> Direction </p>
+                </div>
+                <div class="col-md-6" id="btns">
+                  <p id="delete" class="btn btn-primary" (click)="removeDirection(direction.value); direction.value = '' "><span class="glyphicon glyphicon-minus"></span> Direction </p>
+                </div>
+              </div>
+
+              <hr>
+              <ul>
+                <ul id="addedPs" *ngFor="let direction of recipeInfo.recipeDirections let i = index" > {{i + 1}}) {{ direction }} </ul>
+              </ul>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="col-md-9"></div>
+            <div class="col-md-3">
+              <button class="btn btn-primary save" type="button" (click)='saveNewRecipe()' data-dismiss="modal"> <span class="glyphicon glyphicon-ok"></span> Save Recipe </button>
+            </div>
+          </div>
+
+        </form>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
 
 
