@@ -5,7 +5,7 @@ import { FileUploader } from 'ng2-file-upload';
 import { environment } from '../../environments/environment';
 import { AuthServiceService } from '../services/auth-service.service';
 import { RecipeServiceService } from '../services/recipe-service.service';
-
+import { FilterPipe } from '../pipes/filter.pipe';
 
 
 @Component({
@@ -14,6 +14,7 @@ import { RecipeServiceService } from '../services/recipe-service.service';
   styleUrls: ['./recipes.component.css']
 })
 export class RecipesComponent implements OnInit {
+  pattern: string;
 
   currentUser: any = {};
   baseUrl = environment.apiBase;
@@ -33,6 +34,7 @@ export class RecipesComponent implements OnInit {
     recipeDirections: [],
     recipeType: ""
   }
+
 
   myCoolUploader = new FileUploader({
    url: environment.apiBase + '/api/recipes',

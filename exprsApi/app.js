@@ -45,7 +45,20 @@ app.use(cors({
 //ROUTES----------------------------------------------------
 const myAuthRoutes = require('./routes/auth-routes');
 app.use('/', myAuthRoutes);
+const myRecipeRoutes = require('./routes/recipe-routes');
+app.use('/', myRecipeRoutes);
+const myProfileRoutes = require('./routes/profile-routes');
+app.use('/', myProfileRoutes);
 //ROUTES----------------------------------------------------
+
+
+//Using a client application
+
+app.use((req, res, next) => {
+  res.sendfile(__dirname + '/public/index.html');
+});
+
+
 // catch 404 and forward to error handler
 // app.use(function(req, res, next) {
 //   var err = new Error('Not Found');

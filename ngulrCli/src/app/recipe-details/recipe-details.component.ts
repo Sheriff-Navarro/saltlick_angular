@@ -20,7 +20,8 @@ export class RecipeDetailsComponent implements OnInit {
 
   reviewInfo = {
     reviewRating: undefined,
-    reviewReview: ""
+    reviewReview: "",
+    recipeId: ''
   }
 
   reviewArray: any[] = [];
@@ -96,7 +97,8 @@ saveNewReview(id) {
         this.isShowingForm = false;
         this.reviewInfo = {
           reviewRating: undefined,
-          reviewReview: ''
+          reviewReview: '',
+          recipeId: '',
         };//close this.reviewInfo
         this.saveError = 'There was an error saving the review.';
       }//close newReviewFromApi
