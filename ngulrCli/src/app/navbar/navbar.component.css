@@ -1,38 +1,3 @@
-/* .navbar-brand {
-font-family: Pacifico;
-letter-spacing: 3px;
-font-size: 30px;
-color: #FC5185;
-font-weight: 600;
-
-}
-.navbar-brand:hover {
-font-family: Pacifico;
-letter-spacing: 3px;
-font-size: 30px;
-color: white;
-}
-
-#navbarA {
-  background-color: #364F6B;
-}
-
-nav {
-  background-color: #364F6B;
-}
-
-.nav-link {
-  color: white
-}
-
-.font{
-  font-family: Raleway;
-  font-size: 18px;
-  color: white;
-  letter-spacing: 2px;
-  font-weight: bold;
-} */
-
 #saltyAf:hover {
   color: white;
 }
@@ -70,7 +35,7 @@ padding-left: 15px;
 padding-top: 15px;
 padding-bottom: 15px;
 padding-right: 25px;
-box-shadow: 0px 4px 10px 0 rgba(25,25,25,0.08);
+box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
 }
 
 .viewProfile:hover {

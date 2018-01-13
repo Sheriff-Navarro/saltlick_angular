@@ -21,6 +21,7 @@ export class ProfileComponent implements OnInit {
   recipeListError: string;
   baseUrl = environment.apiBase;
   data: any;
+  recipeCount: number;
 
   isShowingForm: boolean = false;
   isShowingSearch: boolean = true;
@@ -56,21 +57,14 @@ export class ProfileComponent implements OnInit {
           this.currentUser = userFromApi;
           this.route.params.subscribe(params => {
             this.getThemProfileRecipe(params['id']);
-          })      })
+          })
+        })
       .catch(() => {
-          this.routerThang.navigate(['/login']);
+          this.routerThang.navigate(['/']);
       });
-  }
+      // this.countRecipes();
 
-  // getThemProfileRecipe(id) {
-  //   this.profileThang.getProfile(id)
-  //   .subscribe(
-  //     (usersRecipes) => { this.userRecipeArray = usersRecipes },
-  //     () => {
-  //       this.recipeListError = 'Sorry, could not retrieve all the recipes'
-  //     }
-  //   );
-  // }//close getThemRecipes.
+  }
 
   getThemProfileRecipe(id) {
     this.profileThang.getProfile(id)
@@ -93,6 +87,10 @@ export class ProfileComponent implements OnInit {
   }
   } //close saveNewRecipe ()
 
+
+  countRecipes() {
+  this.recipeCount = this.data.recipe.length;
+}
   addIngredient(ingredient) {
     this.recipeInfo.recipeIngredients.push(ingredient);
   }

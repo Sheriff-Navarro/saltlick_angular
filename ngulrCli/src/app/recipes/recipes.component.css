@@ -1,13 +1,15 @@
 body {
   background-color: #E6EEF1;
   height: 100vh;
-  padding: 20px;
+  /* padding: 20px; */
 }
 
 hr {
   color: black;
 
 }
+
+
 
 #createNewRecipe {
   border-style: solid;
@@ -139,6 +141,10 @@ hr {
   /*margin:0px 5px;*/
 }
 
+.wholePage{
+  padding: 20px;
+  margin-top: 15px;
+}
 #recipeForm {
   /*border-style: solid;*/
   /*border-width: 1px;*/
@@ -163,11 +169,15 @@ label {
   font-family: 'Raleway';
     font-size: 26px;
     font-weight: 400;
-    letter-spacing: 5px;
+    letter-spacing: 3px;
     position: relative;
     top: 15px;
+    margin-top: 20px;
 }
 
+#pageHead2{
+  margin-top:15px;
+}
 #exampleModalLabel {
     font-family: Raleway;
     font-size: 26px;

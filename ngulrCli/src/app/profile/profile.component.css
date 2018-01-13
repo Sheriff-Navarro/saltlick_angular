@@ -3,6 +3,7 @@
   padding-bottom: 25px;
   box-shadow: 0px 4px 10px 0 rgba(22,22,22,0.08);
   margin-right: 20px;
+  height: 480px;
   /* padding: 15px; */
   /* height: 250px; */
 }
@@ -12,6 +13,9 @@
   margin-left: 60px;
 }
 
+.line{
+  border-color: #d9dbd6;
+}
 
 /* li a .active {
   background-color: black;
@@ -34,6 +38,27 @@ h3{
   text-align: center;
   margin-top: 20px;
 
+}
+
+.recipeSideBar {
+  font-family: 'Raleway';
+  /* margin-bottom:20px; */
+  font-size: 22px;
+  text-align: center;
+  color: grey;
+  margin-top: 40px;
+  letter-spacing: 3px;
+}
+
+.count {
+  font-family: 'Raleway';
+  /* margin-bottom:20px; */
+  font-size: 27px;
+  text-align: center;
+  color: grey;
+  /* margin-top: 40px; */
+  letter-spacing: 3px;
+  font-weight: bold;
 }
 
 

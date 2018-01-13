@@ -12,34 +12,31 @@
         </div>
         <!-- <span id="saltyAf">  </span> -->
       </div>
-      <div class="col-md-5">
+      <div class="col-md-4">
       </div>
-      <div class="col-md-3">
+      <div  class="col-md-3">
         <button [routerLink]="['/recipes']" id="allRecipe"type="button" class="btn btn-outline-info pull-right">Explore Recipes</button>
       </div>
-      <div class="col-md-1">
+      <div class="col-md-2">
         <div *ngIf="currentUser" class="profile pull-right">
           <div class="btn-group">
-            <!-- <button type="button" class="btn btn-secondar dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-
-            </button> -->
-            <div  class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              <img src="{{currentUser.picture}}" class="img-circle crtr" >
+            <div  *ngIf="currentUser.fullName" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <img *ngIf="currentUser.picture" src="{{currentUser.picture}}" class="img-rounded crtr" >
             </div>
 
-            <div class="dropdown-menu dropdown-menu-right">
+            <div *ngIf="currentUser" class="dropdown-menu dropdown-menu-right">
               <div class="">
                 <span id="myName">{{currentUser.fullName}}</span>
               </div>
               <hr>
               <button class="viewProfile" class="dropdown-item" type="button" [routerLink]="['/profile', currentUser._id]" >View My Profile</button>
               <hr>
-            <button (click)="logMeOutPls()" id="logOut" class="dropdown-item" type="button"><span class="glyphicon glyphicon-off"></span> <span class="logout">Log Out</span> </button>
+            <button (click)="logMeOutPls()" id="logOut" class="dropdown-item" type="button"><span class="glyphicon glyphicon-off"></span> <span class="logout">Log Out</span>  <p *ngIf="logoutError" class="error">
+               {{ logoutError }}
+             </p></button>
             </div>
           </div>
 
-          <!-- <img src="{{currentUser.picture}}" class="img-rounded crtr" > -->
-          <!-- <span id="myName">{{currentUser.fullName}}</span> -->
         </div>
       </div>
     </div>

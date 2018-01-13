@@ -1,17 +1,29 @@
+<app-navbar></app-navbar>
+
 <div class="container" id="page">
   <div class="row">
     <div class="col-md-3">
       <div id="profileSideBar" class="row">
         <div class="col-md-12">
-          <img id="profileImg" src="{{data.user.picture}}" class="img-circle crtr center-block img-responsive" >
-          <div id="profileName"class="col-md-12">
+          <div class="row">
+            <img id="profileImg" src="{{data.user.picture}}" class="img-circle crtr center-block img-responsive" >
+            <div id="profileName"class="col-md-12">
             {{data.user.fullName}}
           </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-2"></div>
+            <button type="button" class="btn btn-primary col-sm-8" id="createRecButt" data-toggle="modal" data-target="#exampleModal" style="
+            margin-top: 40px;">
+            <span class="glyphicon glyphicon-plus"></span>  Recipe</button>
           <div class="col-sm-2"></div>
-        <button type="button" class="btn btn-primary col-sm-8" id="createRecButt" data-toggle="modal" data-target="#exampleModal" style="
-          margin-top: 40px;">
-          <span class="glyphicon glyphicon-plus"></span>  Recipe</button>
-      	<div class="col-sm-2"></div>
+          </div>
+          <div class="row">
+            <div class="col-md-12 recipeSideBar">
+            <span class=""> RECIPES</span>
+              <p class="count">{{data.recipe.length}}</p>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -24,8 +36,9 @@
 
 <div class="tab-content">
 <div id="home" class="tab-pane fade in active">
+  <hr class="line">
   <div class = "row">
-  <div  class = "col-sm-4" *ngFor = "let recipe of data.recipe | filter: 'name': pattern">
+  <div  class = "col-sm-4" *ngFor = "let recipe of data.recipe">
   <div [routerLink]="['/recipe', recipe._id]" id="eachRecipe" class = "col-sm-12 container" >
     <div class = "row ">
       <div class="col-sm-12" id="withinRecipe">
@@ -56,6 +69,8 @@
 
 </div>
 <div id="menu1" class="tab-pane fade">
+  <hr class="line">
+
   <h3>Find all your bookmarked recipes here!</h3>
 </div>
 

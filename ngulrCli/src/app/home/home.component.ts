@@ -16,7 +16,7 @@ export class HomeComponent implements OnInit {
   isShowingLogin: boolean = false;
   isShowingSignup: boolean = true;
   currentUser: any = {};
-
+  isLoggedOut: boolean = false;
 
   loginInfo = {
     email: '',

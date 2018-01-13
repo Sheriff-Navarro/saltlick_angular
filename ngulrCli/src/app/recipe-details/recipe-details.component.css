@@ -5,7 +5,7 @@ body {
   text-align: left;
   font-family: 'Raleway';
   font-size: 45px;
-  color: grey;
+  color: #2f7584;
   margin-bottom: 15px;
   letter-spacing: 5px;
   font-weight: bold;
@@ -29,6 +29,7 @@ label {
   padding:10px;
   background-color: white;
   border-radius: 5px;
+  box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
 
 }
 
@@ -167,6 +168,8 @@ color:#FC5185;
   padding: 25px 0px 10px 25px;
   margin-bottom: 25px;
   background-color: white;
+  box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+
   /* margin-top: 20px; */
 }
 

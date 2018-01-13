@@ -51,7 +51,7 @@ export class RecipeDetailsComponent implements OnInit {
           })
           })
       .catch(() => {
-          this.routerThang.navigate(['/login']);
+          this.routerThang.navigate(['/']);
       });
 
   } //

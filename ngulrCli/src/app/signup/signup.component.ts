@@ -48,7 +48,7 @@ doSignUp() {
          this.errorMessage = "";
 
          // redirect to /camels
-         this.routerThang.navigate(['/signup']);
+         this.routerThang.navigate(['/']);
      })
      .catch((err) => {
          const parsedError = err.json();

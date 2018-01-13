@@ -19,9 +19,10 @@ export class NavbarComponent implements OnInit {
 
   ngOnInit() {
     // this.getThemRecipes();
-
+    console.log("NG INIT USERFROMAPI");
     this.authThang.checklogin()
       .then((userFromApi) => {
+          console.log("USERFROMAPI = ", userFromApi);
           this.currentUser = userFromApi;
       })
       .catch(() => {

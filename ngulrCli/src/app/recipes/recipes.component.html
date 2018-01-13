@@ -1,34 +1,15 @@
-<body>
 
-<!-- <button (click)="logMeOutPls()"> Log Out </button>
- <p *ngIf="logoutError" class="error">
-   {{ logoutError }}
- </p>
-
- <div *ngIf="currentUser">
-   <h2> You are now logged in as {{ currentUser.fullName }}!! </h2>
-
-
-   <p> Here's the user object </p>
-   <pre> {{ user | json }} </pre>
- </div> -->
-  <!-- <div class = "row">
-    <div class = "col-sm-12">
-      <button *ngIf="!isShowingForm" (click)="showRecipeForm()">
-        Add Recipe
-      </button>
-    </div>
-  </div> -->
-
-
+<!-- <body> -->
+<app-navbar></app-navbar>
+<div class="container">
 
 <div class="row">
   <div class="col-sm-4 align-baseline" id="pageHead">
   The World's Cookbook
   </div>
-  <div class="col-sm-2">
+  <div class="col-sm-2" id="pageHead2">
   </div>
-  <div class="col-sm-6">
+  <div class="col-sm-6" id="pageHead2">
     <!-- Button trigger modal -->
     <button type="button" class="btn btn-primary col-sm-5" id="createRecButt" data-toggle="modal" data-target="#exampleModal">
     <span class="glyphicon glyphicon-plus"></span>  Recipe</button>
@@ -193,4 +174,5 @@
 </div>
 <!-- end of outside row -->
 
-</body>
+<!-- </body> -->
+</div>
