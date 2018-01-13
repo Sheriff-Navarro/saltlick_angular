@@ -1,8 +1,53 @@
-<script src="https://cdnjs.cloudflare.com/ajax/libs/ng2-bootstrap/x.x.x/ng2-bootstrap.min.js"></script>
+<script src="`https://cdnjs.cloudflare.com/ajax/libs/ng2-bootstrap/x.x.x/ng2-bootstrap.min.js"></script>
 <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css?family=Open+Sans|Open+Sans+Condensed:300|Pacifico|Raleway" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Lobster|Open+Sans|Raleway" rel="stylesheet">
 
-<nav id="navbarA" class="navbar navbar-expand-lg ">
+<div class="conatiner" id="navbar">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="col-md-3">
+        <!-- <img src="/../../saltlick.png" alt="">  -->
+        <div id="saltyAf" [routerLink]="['']">
+          SaltyAf
+        </div>
+        <!-- <span id="saltyAf">  </span> -->
+      </div>
+      <div class="col-md-5">
+      </div>
+      <div class="col-md-3">
+        <button [routerLink]="['/recipes']" id="allRecipe"type="button" class="btn btn-outline-info pull-right">Explore Recipes</button>
+      </div>
+      <div class="col-md-1">
+        <div *ngIf="currentUser" class="profile pull-right">
+          <div class="btn-group">
+            <!-- <button type="button" class="btn btn-secondar dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+
+            </button> -->
+            <div  class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <img src="{{currentUser.picture}}" class="img-circle crtr" >
+            </div>
+
+            <div class="dropdown-menu dropdown-menu-right">
+              <div class="">
+                <span id="myName">{{currentUser.fullName}}</span>
+              </div>
+              <hr>
+              <button class="viewProfile" class="dropdown-item" type="button" [routerLink]="['/profile', currentUser._id]" >View My Profile</button>
+              <hr>
+            <button (click)="logMeOutPls()" id="logOut" class="dropdown-item" type="button"><span class="glyphicon glyphicon-off"></span> <span class="logout">Log Out</span> </button>
+            </div>
+          </div>
+
+          <!-- <img src="{{currentUser.picture}}" class="img-rounded crtr" > -->
+          <!-- <span id="myName">{{currentUser.fullName}}</span> -->
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- <nav id="navbarA" class="navbar navbar-expand-lg ">
   <a class="navbar-brand" href="#">SaltyAf</a>
   <button class="navbar-toggler font" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon font"></span>
@@ -12,23 +57,13 @@
       <li class="nav-item active font">
         <a class="nav-link font" [routerLink]="['/recipes']">Explore Recipes |<span class="sr-only font">(current)</span></a>
       </li>
-      <!-- <li class="nav-item">
-        <a class="nav-link" href="#">Features</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Pricing</a>
-      </li> -->
-      <!-- <li *ngIf="currentUser"> {{currentUser.fullName}} </li> -->
-      <li *ngIf="currentUser" class="nav-item">
+
+      <li *ngIf="currentUser" class="nav-item navbar-right">
         <a class="nav-link font" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" [routerLink]="['/profile', currentUser._id]">
         {{currentUser.fullName}}
         </a>
-        <div *ngIf="currentUser" class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-          <a class="dropdown-item font" [routerLink]="['/profile', currentUser._id]">Action</a>
-          <a class="dropdown-item font" href="#">Another action</a>
-          <a class="dropdown-item font" href="#">Something else here</a>
-        </div>
+
       </li>
     </ul>
   </div>
-</nav>
+</nav> -->

@@ -15,7 +15,7 @@ import { FileUploader } from 'ng2-file-upload';
 export class HomeComponent implements OnInit {
   isShowingLogin: boolean = false;
   isShowingSignup: boolean = true;
-  isLoggedOut: boolean = false;
+  currentUser: any = {};
 
 
   loginInfo = {

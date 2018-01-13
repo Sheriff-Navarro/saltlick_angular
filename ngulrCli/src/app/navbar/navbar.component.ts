@@ -29,4 +29,15 @@ export class NavbarComponent implements OnInit {
       });
   } // close ngOnInit()
 
+  logMeOutPls() {
+    this.authThang.logout()
+      .then(() => {
+          this.routerThang.navigate(['/']);
+      })
+      .catch(() => {
+          this.logoutError = 'Log out went to 💩';
+      });
+  } // close logMeOutPls()s
+
+
 }
