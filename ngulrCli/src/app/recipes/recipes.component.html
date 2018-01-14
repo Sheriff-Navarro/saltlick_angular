@@ -149,7 +149,7 @@
 <div [routerLink]="['/recipe', recipe._id]" id="eachRecipe" class = "col-sm-12 container" >
   <div class = "row ">
     <div class="col-sm-12" id="withinRecipe">
-      <img *ngIf = "recipe.picture" [src]="baseUrl + recipe.picture" class="img-thumbnail" alt="Responsive image">
+      <img *ngIf = "recipe.picture" [src]="baseUrl + recipe.picture" class="img-fluid" alt="Responsive image">
     </div>
     <div class="row">
       <div class="col-sm-12">

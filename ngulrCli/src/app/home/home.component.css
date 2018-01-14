@@ -2,8 +2,56 @@ body, html{
   height: auto;
   font-family: 'Raleway', sans-serif;
   /* background-image: url('../../assets/images/landingPage.png'); */
-
 }
+
+.img-fluid {
+  height: 250px;
+  width: 250px;
+}
+
+#createRecButt{
+  padding: 15px 0px;
+  border-radius: 5px;
+  font-size: 25px;
+  font-family: 'Raleway';
+  text-align: center;
+  font-weight: bold;
+  background-color: white;
+  border-color: #FC5185;
+  color: #FC5185
+}
+
+#createRecButt:hover{
+  padding: 15px 0px;
+  border-radius: 5px;
+  font-size: 25px;
+  font-family: 'Raleway';
+  text-align: center;
+  font-weight: bold;
+  background-color: white;
+  border-color: #FC5185;
+  color: #FC5185;
+  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+}
+
+
+.modal-body{
+padding-top: 5px
+}
+
+#exampleModalLabel {
+    font-family: Raleway;
+    font-size: 26px;
+    font-weight: 400;
+    letter-spacing: 5px;
+    position: relative;
+    top: 15px;
+    color: white;
+  }
+
+  .modal-header{
+    background-color: #66bfbf;
+  }
 
 #homeComp {
   /* background-image: url('/assets/images/landingPage.png'); */
@@ -31,7 +79,7 @@ form {
 }
 
 #homeCard {
-  margin-top: 30px;
+  margin-top: 0px;
   font-size: 20px;
   background-color: white;
   text-align: center;
@@ -40,7 +88,7 @@ form {
   border-radius: 0px;
   border: 0px;
   border-color: #F0F0F0;
-  box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+  /* box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22); */
 }
 
 #formHead {
@@ -55,6 +103,10 @@ form {
   /*width: 650px;*/
   margin: 0px;
   letter-spacing: 3px;
+}
+
+.close {
+  font-size: 29px;
 }
 
 .btn-primary{
@@ -72,11 +124,11 @@ form {
   margin-top: 20px;
   margin-bottom: 15px;
   padding: 10px;
-  background-color: #35b0b7;
-  border-color:#35b0b7;
+  background-color: #FC5185;
+  border-color: #FC5185;
   font-size: 23px;
   font-weight: bold;
-
+  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
 }
 
 .form-top {
