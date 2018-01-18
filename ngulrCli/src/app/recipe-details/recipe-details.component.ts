@@ -24,6 +24,8 @@ export class RecipeDetailsComponent implements OnInit {
     recipeId: ''
   }
 
+
+
   reviewArray: any[] = [];
   reviewListError: string;
   saveError: string;
@@ -31,6 +33,11 @@ export class RecipeDetailsComponent implements OnInit {
 
   currentUser: any = {};
   baseUrl = environment.apiBase;
+
+  bookmarkInfo = {
+    recipeId: '',
+    user: this.currentUser
+  }
 
   isShowingDirections: boolean = false;
 
@@ -56,11 +63,7 @@ export class RecipeDetailsComponent implements OnInit {
 
   } //
 
- //  ngOnInit() {
- //    this.route.params.subscribe(params => {
- //     this.getRecipeDetails(params['id']);
- //   });
- // }
+
 
   getRecipeDetails(id) {
     this.recipeThang.get(id)
@@ -86,6 +89,17 @@ getParamsId(){
 this.route.params.subscribe(params => {
   this.saveNewReview(params['id']);
 })
+}
+
+bookmarkRecipeComp(id, currentUserId){
+  console.log("Anything   ", currentUserId);
+  this.recipeThang.bookmarkRecipe(id, currentUserId)
+
+  // .subscribe()
+  .subscribe((recipe) =>{
+    console.log('RES = ', recipe);
+    this.recipe = recipe;
+  })
 }
 
 

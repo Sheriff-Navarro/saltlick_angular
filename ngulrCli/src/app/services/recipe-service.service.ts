@@ -42,6 +42,26 @@ newReview(componentInfo, id) {
 .map(res => res.json());
 }//close newReview
 
+// bookmarkRecipe(id) {
+//   return this.httpThang
+//   .post(`${environment.apiBase}/api/recipes/${id}/follow`,
+//   {withCredentials:true}
+// )
+// //parse the JSON
+// .map(res => res.json());
+// }
+
+bookmarkRecipe(id, user) {
+var userId = {id:user._id}
+  return this.httpThang
+  .post(`${environment.apiBase}/api/recipes/${id}/follow`, userId, 
+  {withCredentials:true}
+)
+//parse the JSON
+.map(res => res.json());
+}
+
+
   allRecipes() {
       return this.httpThang
         .get(
@@ -63,16 +83,6 @@ get(id){
   .map(res => res.json());
 }//close specific recipe
 
-// get(id) {
-//   var temp = this.httpThang.get(`${environment.apiBase}/api/recipes/${id}`)
-//     .map((res) => res.json());
-//     return temp;
-// }
-
-// get(id) {
-//   return this.httpThang.get(`${environment.apiBase}/api/recipes/${id}`)
-//   .map((res) => res.json());
-// }
 
 
 

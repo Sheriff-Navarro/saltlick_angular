@@ -97,6 +97,8 @@ closeSearch() {
   this.isShowingSearch = false;
 }
 
+
+
   saveNewRecipe() {
     //if no recipe, regular AJAX upload
     if (this.myCoolUploader.getNotUploadedItems().length===0){

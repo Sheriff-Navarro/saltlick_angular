@@ -227,6 +227,19 @@ color:#FC5185;
   border-color: #FC5185;
 }
 
+#createRecButt1{
+  margin-top: 25px;
+  margin-right: 20px;
+  border-radius: 5px;
+  font-size: 17px;
+  font-family: 'Open Sans';
+  text-align: center;
+  font-weight: bold;
+  color: white;
+  background-color: #42f495;
+  border-color: #42f495;
+}
+
 #createRecButt:hover {
   margin-top: 25px;
   margin-right: 20px;
@@ -239,8 +252,22 @@ color:#FC5185;
   background-color: #FC5185;
   border-color: #FC5185;
   box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
-
 }
+
+#createRecButt1:hover {
+  margin-top: 25px;
+  margin-right: 20px;
+  border-radius: 5px;
+  font-size: 17px;
+  font-family: 'Open Sans';
+  text-align: center;
+  font-weight: bold;
+  color: white;
+  background-color: #42f495;
+  border-color: #42f495;
+  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+}
+
 
 #whiteStar{
   color: white;

@@ -87,7 +87,7 @@ export class HomeComponent implements OnInit {
              this.errorMessage = "";
 
              // redirect to /camels
-             this.routerThang.navigate(['/signup']);
+             this.routerThang.navigate(['/recipes']);
          })
          .catch((err) => {
              const parsedError = err.json();
