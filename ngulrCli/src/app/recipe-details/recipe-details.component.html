@@ -1,10 +1,17 @@
   <app-navbar></app-navbar>
+  <div *ngIf=showAlert class="alert alert-success alert-dismissible fade show" role="alert">
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+    </button>
+     <strong>{{recipe.recipe.name}}</strong> recipe has successfully been bookmarked to your profile.
+  </div>
+  <!-- <div *ngIf="showAlert" class="alert alert-warning alert-dismissible fade show" role="alert">
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+    </button>
+    <strong>Holy guacamole!</strong> You should check in on some of those fields below.
+  </div> -->
   <div *ngIf="recipe" class="container" id="wholeRecipe">
-    <!-- <div class="row">
-      <div class="col-md-3">
-        <span class="glyphicon glyphicon-menu-left"></span>
-      </div>
-    </div> -->
     <div class="row">
       <div class="col-md-12">
         <div class="row">
@@ -14,7 +21,7 @@
         <div class="col-md-1">
         </div>
         <div class="col-md-4">
-          <button type="button" class="btn btn-primary pull-right" id="createRecButt1" (click)='bookmarkRecipeComp(recipe.recipe._id, currentUser)' >
+          <button type="button" class="btn btn-primary pull-right" id="createRecButt1" (click)='bookmarkRecipeComp(recipe.recipe._id, currentUser)' (click)="triggerAlert()">
           <span  id="whiteStar"class="glyphicon glyphicon-bookmark"></span>Bookmark</button>
           <button type="button" class="btn btn-primary pull-right" id="createRecButt" data-toggle="modal" data-target="#exampleModal">
           <span id="whiteStar"class="glyphicon glyphicon-star"></span>Rate Recipe</button>

@@ -329,3 +329,11 @@ input {
   #recipeCreator {
     padding-left: 25px;
   }
+
+  .alert {
+    font-family: 'Open Sans';
+    font-size: 22px;
+    margin: 15px 70px 0px 70px;
+    margin-bottom: 15px;
+    text-align: center;
+  }

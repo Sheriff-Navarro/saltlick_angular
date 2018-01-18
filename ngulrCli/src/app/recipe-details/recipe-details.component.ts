@@ -15,7 +15,7 @@ import { RecipeServiceService } from '../services/recipe-service.service';
 })
 export class RecipeDetailsComponent implements OnInit {
   recipe: any;
-
+  showAlert = false;
   paramsId = undefined;
 
   reviewInfo = {
@@ -63,6 +63,13 @@ export class RecipeDetailsComponent implements OnInit {
 
   } //
 
+  triggerAlert() {
+    this.showAlert = true;
+  }
+
+  hideAlert() {
+    this.showAlert = false;
+  }
 
 
   getRecipeDetails(id) {

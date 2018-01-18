@@ -70,8 +70,42 @@
 </div>
 <div id="menu1" class="tab-pane fade">
   <hr class="line">
-
   <h3>Find all your bookmarked recipes here!</h3>
+  <div class = "row">
+  <div  class = "col-sm-4" *ngFor = "let recipe of data.user.savedRecipes">
+  <div [routerLink]="['/recipe', recipe._id]" id="eachRecipe" class = "col-sm-12 container" >
+    <div class = "row ">
+      <div class="col-sm-12" id="withinRecipe">
+        <img *ngIf = "recipe.picture" [src]="baseUrl + recipe.picture" class="img-thumbnail" alt="Responsive image">
+      </div>
+      <div class="row">
+        <div class="col-sm-12">
+        <p id="recipeNamed" [routerLink]="['/recipe', recipe._id]">{{recipe.name}}</p>
+        <p id="cookTime"> <span class = "	glyphicon glyphicon-time"></span> <b >{{recipe.cookTime}}</b> Minutes </p>
+        <!-- <div id="recipeCreator"class="row">
+          <div [routerLink]="['/profile', recipe.user._id]" class="col-md-12 rcpeCrtr" >
+            <img src="{{recipe.user.picture}}" class="img-circle crtr" >
+            <span id="reviewName">{{recipe.user.fullName}}</span>
+          </div>
+        </div> -->
+        <!-- <div id="recipeCreator"class="row">
+          <div [routerLink]="['/profile', recipe.user._id]" class="col-md-12 rcpeCrtr" >
+            <img src="{{recipe.user.picture}}" class="img-circle crtr" >
+            <span id="reviewName">{{recipe.user.fullName}}</span>
+          </div>
+        </div> -->
+        <!-- <p id="recipeCreator">Recipe Creator: <b id="creator1"     [routerLink]="['/profile', recipe.user._id]"
+        >{{recipe.user.fullName}}</b></p> -->
+        </div>
+      </div>
+
+  </div>
+  <!-- end of row -->
+  </div>
+  <!-- end of container -->
+  </div>
+  </div>
+  <!-- end of outside row -->
 </div>
 
 </div>
