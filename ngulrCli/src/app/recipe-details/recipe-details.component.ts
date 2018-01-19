@@ -17,6 +17,8 @@ export class RecipeDetailsComponent implements OnInit {
   recipe: any;
   showAlert = false;
   paramsId = undefined;
+  showBookmark = true;
+
 
   reviewInfo = {
     reviewRating: undefined,
@@ -69,6 +71,10 @@ export class RecipeDetailsComponent implements OnInit {
 
   hideAlert() {
     this.showAlert = false;
+  }
+
+  hideBookmark() {
+    this.showBookmark = false;
   }
 
 

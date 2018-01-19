@@ -21,7 +21,7 @@
         <div class="col-md-1">
         </div>
         <div class="col-md-4">
-          <button type="button" class="btn btn-primary pull-right" id="createRecButt1" (click)='bookmarkRecipeComp(recipe.recipe._id, currentUser)' (click)="triggerAlert()">
+          <button *ngIf="showBookmark" (click)="hideBookmark()"type="button" class="btn btn-primary pull-right" id="createRecButt1" (click)='bookmarkRecipeComp(recipe.recipe._id, currentUser)' (click)="triggerAlert()">
           <span  id="whiteStar"class="glyphicon glyphicon-bookmark"></span>Bookmark</button>
           <button type="button" class="btn btn-primary pull-right" id="createRecButt" data-toggle="modal" data-target="#exampleModal">
           <span id="whiteStar"class="glyphicon glyphicon-star"></span>Rate Recipe</button>
