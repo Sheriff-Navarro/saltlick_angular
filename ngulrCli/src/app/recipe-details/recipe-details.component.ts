@@ -55,14 +55,20 @@ export class RecipeDetailsComponent implements OnInit {
     this.authThang.checklogin()
       .then((userFromApi) => {
           this.currentUser = userFromApi;
+          // console.log("User's bookmark ", userFromApi.savedRecipes)
+          // console.log("User's bookmark 2 ", this.currentUser.savedRecipes)
+          this.checkSavedRecipes();
           this.route.params.subscribe(params => {
             this.getRecipeDetails(params['id']);
           })
           })
       .catch(() => {
           this.routerThang.navigate(['/']);
+
       });
 
+      this.getParams();
+      // this.checkSavedRecipes();
   } //
 
   triggerAlert() {
@@ -76,6 +82,29 @@ export class RecipeDetailsComponent implements OnInit {
   hideBookmark() {
     this.showBookmark = false;
   }
+
+// this.currentUser.savedRecipes.indexOf(this.paramsId)
+
+checkSavedRecipes(){
+  console.log('check saved recipes running...', this.paramsId, this.currentUser.savedRecipes)
+  // let result =
+  if(this.currentUser.savedRecipes.find( elem => elem == this.paramsId)){
+  this.showBookmark = false;
+} else {
+  this.showBookmark = true;
+}
+  // console.log("found ", result)
+}
+
+
+
+getParams() {
+  this.route.params.subscribe(params=> {
+    this.paramsId = params['id'];
+    console.log("Params Id ", this.paramsId)
+  })
+}
+
 
 
   getRecipeDetails(id) {
