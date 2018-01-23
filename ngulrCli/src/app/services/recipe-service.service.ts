@@ -42,19 +42,11 @@ newReview(componentInfo, id) {
 .map(res => res.json());
 }//close newReview
 
-// bookmarkRecipe(id) {
-//   return this.httpThang
-//   .post(`${environment.apiBase}/api/recipes/${id}/follow`,
-//   {withCredentials:true}
-// )
-// //parse the JSON
-// .map(res => res.json());
-// }
 
 bookmarkRecipe(id, user) {
 var userId = {id:user._id}
   return this.httpThang
-  .post(`${environment.apiBase}/api/recipes/${id}/follow`, userId, 
+  .post(`${environment.apiBase}/api/recipes/${id}/follow`, userId,
   {withCredentials:true}
 )
 //parse the JSON
