@@ -12,6 +12,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AuthServiceService } from './services/auth-service.service';
 import { RecipeServiceService } from './services/recipe-service.service';
 import { ProfileServiceService }from './services/profile-service.service';
+import { UserServiceService} from './services/user-service.service';
 //COMPONENTS
 import { AppComponent } from './app.component';
 import { RecipesComponent } from './recipes/recipes.component';
@@ -21,8 +22,12 @@ import { NotFoundComponent } from './not-found/not-found.component';
 import { ProfileComponent } from './profile/profile.component';
 import { HomeComponent } from './home/home.component';
 import { NavbarComponent } from './navbar/navbar.component';
-import { FilterPipe } from './pipes/filter.pipe';
+
+import { UsersComponent } from './users/users.component';
 //PIPE
+// import { DatePipe } from '@angular/common';
+// DatePipe
+import { FilterPipe } from './pipes/filter.pipe';
 
 @NgModule({
   declarations: [
@@ -36,6 +41,8 @@ import { FilterPipe } from './pipes/filter.pipe';
     HomeComponent,
     NavbarComponent,
     FilterPipe,
+    UsersComponent,
+
   ],
   imports: [
     BrowserModule,
@@ -48,7 +55,8 @@ import { FilterPipe } from './pipes/filter.pipe';
   providers: [
     AuthServiceService,
     RecipeServiceService,
-    ProfileServiceService
+    ProfileServiceService,
+    UserServiceService
   ],
   bootstrap: [AppComponent]
 })

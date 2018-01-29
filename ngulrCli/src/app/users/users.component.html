@@ -1,0 +1,34 @@
+<app-navbar></app-navbar>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-4 align-baseline" id="pageHead">
+    The Chef Directory
+    </div>
+    <div class="col-sm-2" id="pageHead2">
+    </div>
+    <div class="col-sm-6" id="pageHead2">
+      <div class="input-group col-sm-7 pull-right">
+        <input *ngIf="isShowingSearch" id="things_name" type="text" class="form-control" placeholder="Filter Recipes" aria-label="Recipient's username" aria-describedby="basic-addon2" [(ngModel)]="pattern">
+      </div>
+    </div>
+    <hr>
+  </div>
+  <div class="row">
+    <div class="col-sm-4" *ngFor="let user of userArray | filter: 'fullName': pattern" id="eachRecipe"[routerLink] ="['/profile', user._id]">
+      <div class="col-sm-12 container"  id="withinRecipe">
+        <div class="row">
+          <div id="recipeCreator" class="col-sm-4">
+            <img src="{{user.picture}}" class="img-circle crtr" >
+          </div>
+          <div id=
+          "reviewName"class="col-sm-8">
+            <p>{{user.fullName}}</p>
+          </div>
+            <p> <span>Joined: </span> {{user.createdAt | date: 'mediumDate'}}</p>
+        </div>
+    </div>
+
+
+    </div>
+  </div>
+</div>

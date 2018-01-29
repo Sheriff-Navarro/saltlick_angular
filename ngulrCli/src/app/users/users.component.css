@@ -1,0 +1,343 @@
+body {
+  background-color: #E6EEF1;
+  height: 100vh;
+  /* padding: 20px; */
+}
+
+hr {
+  color: black;
+
+}
+
+/* .img-fluid {
+  height: 200px;
+  width: 200px;
+} */
+
+
+
+#createNewRecipe {
+  border-style: solid;
+  border-width: 1px;
+  border-color: black;
+  margin: 15px 0px 15px 0px;
+  /*margin-top: 25px;
+  margin-bottom: 25px;*/
+  text-align: center;
+  border-radius: 2px;
+  padding: 20px;
+  font-size: 24px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+  background-color: rgba(252,81,133, .8);
+  border-color: rgb(252,81,133);
+  color: white;
+  font-family: 'Raleway';
+
+}
+
+#plusglyph {
+  padding-right: 15px;
+}
+
+
+.img-thumbnail{
+  width: auto;
+  /*height: auto;*/
+  /*height: 250px*/
+
+  border: 0px;
+  border-style: none;
+  margin: 0px;
+  padding: 0px;
+}
+
+.img-circle {
+  height: 100px;
+  width: 100px;
+  margin-top: 20px;
+  margin-left: 0px;
+  margin-bottom: 20px;
+}
+
+#eachRecipe {
+  /*border: 1px;
+  border-style: solid;*/
+  /*border-color: black;*/
+  /*margin-left: 30px;*/
+  background-color: white;
+  margin-bottom: 40px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+}
+
+#eachRecipe:hover {
+  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+
+}
+
+#withinRecipe {
+  margin: 0px;
+  padding:0px;
+}
+
+#recipeNamed {
+  color: #FC5185;
+  margin: 15px;
+  /*margin-top: 240px;*/
+  font-family: 'Raleway', sans-serif;
+  font-size: 25px;
+}
+
+#cookTime {
+  margin: 15px;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 18px;
+}
+
+#recipeCreator {
+  margin: 0px;
+  margin-bottom: 10px;
+  font-size: 16px;
+  font-family: 'Open Sans', sans-serif;
+  color: grey;
+
+}
+
+#creator1{
+  color: #364F6B;
+  font-size: 18px;
+}
+
+#cookTime1 {
+  color: #43DDE6;
+  font-family: 'Open Sans';
+}
+
+#things_name {
+  padding: 20px;
+  border-radius: 5px;
+  font-size: 17px;
+  font-family: Raleway;
+  text-align: center;
+  font-weight: bold;
+  margin:0px 5px;
+}
+
+#createRecButt{
+  padding: 8px;
+  border-radius: 5px;
+  font-size: 17px;
+  font-family: 'Open Sans';
+  text-align: center;
+  font-weight: bold;
+  background-color: #FC5185;
+  border-color: #FC5185;
+  /*margin:0px 5px;*/
+}
+
+#createRecButt:hover{
+  padding: 8px;
+  border-radius: 5px;
+  font-size: 17px;
+  font-family: 'Open Sans';
+  text-align: center;
+  font-weight: bold;
+  background-color: #FC5185;
+  border-color: #FC5185;
+  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+  /*margin:0px 5px;*/
+}
+
+.wholePage{
+  padding: 20px;
+  margin-top: 15px;
+}
+#recipeForm {
+  /*border-style: solid;*/
+  /*border-width: 1px;*/
+  background-color: white;
+  margin: 20px 20px;
+}
+
+#nextLine {
+  background-color: #66bfbf;
+  height: 1px;
+  /*border-radius: 15px;*/
+  margin: 10px;
+}
+
+label {
+  font-family: 'Open Sans';
+  font-size: 18px;
+  color: #5d5e60;
+}
+
+#pageHead {
+  font-family: 'Raleway';
+    font-size: 26px;
+    font-weight: 400;
+    letter-spacing: 3px;
+    position: relative;
+    top: 15px;
+    margin-top: 20px;
+}
+
+#pageHead2{
+  margin-top:15px;
+}
+#exampleModalLabel {
+    font-family: Raleway;
+    font-size: 26px;
+    font-weight: 400;
+    letter-spacing: 5px;
+    position: relative;
+    top: 15px;
+    color: white;
+  }
+
+  .modal-header{
+    background-color: #66bfbf;
+  }
+
+  .close {
+    font-size: 29px;
+  }
+
+input {
+  padding:10px;
+  font-size: 20px
+}
+
+#recipeType {
+  font-size: 16px;
+  font-family: 'Open Sans';
+}
+
+#add1 {
+  background-color: white;
+  margin-top: 15px;
+  font-size: 18px;
+  font-family: 'Open Sans';
+  border-color: rgb(38,204,110);
+  padding-top: 5px;
+  margin-left: 15px;
+  color:rgb(38,204,110);
+}
+
+#add1:hover {
+  background-color: rgb(38,204,110);
+  color:white;
+  border-color: rgb(38,204,110);
+  margin-top: 15px;
+  font-size: 18px;
+  font-family: 'Open Sans';
+  padding-top: 5px;
+  margin-left: 15px;
+}
+
+#add2 {
+  background-color: white;
+  margin-top: 15px;
+  font-size: 18px;
+  font-family: 'Open Sans';
+  border-color: rgb(38,204,110);
+  padding-top: 5px;
+  color:rgb(38,204,110);
+}
+
+#add2:hover {
+  background-color: rgb(38,204,110);
+  color:white;
+  border-color: rgb(38,204,110);
+  margin-top: 15px;
+  font-size: 18px;
+  font-family: 'Open Sans';
+  border-color: rgb(38,204,110);
+  padding-top: 5px;
+}
+#btns{
+  padding: 1px;
+}
+
+
+
+#delete {
+  background-color: white;
+  margin-top: 15px;
+  font-size: 18px;
+  font-family: 'Open Sans';
+  color: rgba(204,38,38,.8);
+  border-color: rgba(204,38,38,.8);
+  padding-top: 5px;
+  margin-left: 1px;
+}
+
+#delete:hover {
+  background-color: rgba(204,38,38,.8);;
+  margin-top: 15px;
+  font-size: 18px;
+  font-family: 'Open Sans';
+  color: white;
+  border-color: rgba(204,38,38,.8);
+  padding-top: 5px;
+  margin-left: 1px;
+}
+
+#addedPs {
+  margin-top: 15px;
+  padding: 0px;
+  font-size: 18px;
+  font-family: 'Open Sans';
+}
+
+li {
+  padding: 5px;
+  margin-top: 15px;
+  font-size: 18px;
+  font-family: 'Open Sans';
+  margin-left: 20px;
+}
+
+ul {
+  padding: 0px;
+  margin-top: 15px;
+  font-size: 18px;
+  font-family: 'Open Sans';
+}
+
+.save {
+  background-color: white;
+  border-color: #66bfbf;
+  color: #66bfbf;
+  margin-top: 15px;
+  font-size: 18px;
+  font-family: 'Open Sans';
+  padding-top: 5px;
+}
+
+.save:hover {
+  background-color: #66bfbf;
+  border-color: #66bfbf;
+  color: white;
+  margin-top: 15px;
+  font-size: 18px;
+  font-family: 'Open Sans';
+  padding-top: 5px;
+  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+}
+
+#recipe-picture-input {
+  padding: 0px;
+}
+
+#reviewName {
+  margin-top: 25px;
+  font-size: 25px;
+  font-family: 'Open Sans';
+}
+
+span{
+font-size: 10px;
+font-family: monospace;
+}

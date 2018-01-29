@@ -80,7 +80,7 @@ export class RecipesComponent implements OnInit {
     .subscribe(
       (allTheRecipes) => { this.recipeArray = allTheRecipes },
       () => {
-        this.recipeListError = 'Sorry, could not retrieve all the recipes'
+        this.recipeListError = 'Sorry, could not retrieve all the recipes.'
       }
     );
   }//close getThemRecipes.
