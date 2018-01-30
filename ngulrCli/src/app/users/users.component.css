@@ -69,6 +69,7 @@ hr {
   margin-bottom: 40px;
   box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
   transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+
 }
 
 #eachRecipe:hover {
@@ -159,6 +160,7 @@ hr {
   background-color: white;
   margin: 20px 20px;
 }
+
 
 #nextLine {
   background-color: #66bfbf;
@@ -332,7 +334,7 @@ ul {
 }
 
 #reviewName {
-  margin-top: 25px;
+  margin-top: 40px;
   font-size: 25px;
   font-family: 'Open Sans';
 }
@@ -340,4 +342,26 @@ ul {
 span{
 font-size: 10px;
 font-family: monospace;
+}
+
+#joined {
+  color: #939aa5;
+  font-size: 12px;
+  font-family: 'Open Sans';
+  vertical-align: text-top;
+
+}
+
+#date {
+s  color: #44474c;
+  font-size: 12px;
+  font-family: 'Open Sans';
+  vertical-align: text-top;
+
+}
+
+p{
+  margin-bottom: 0px;
+  margin-top: 10px;
+
 }

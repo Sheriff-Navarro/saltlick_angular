@@ -11,20 +11,19 @@
         <input *ngIf="isShowingSearch" id="things_name" type="text" class="form-control" placeholder="Filter Recipes" aria-label="Recipient's username" aria-describedby="basic-addon2" [(ngModel)]="pattern">
       </div>
     </div>
-    <hr>
   </div>
+  <hr id="nextLine">
   <div class="row">
-    <div class="col-sm-4" *ngFor="let user of userArray | filter: 'fullName': pattern" id="eachRecipe"[routerLink] ="['/profile', user._id]">
-      <div class="col-sm-12 container"  id="withinRecipe">
+    <div class="col-sm-4" *ngFor="let user of userArray | filter: 'fullName': pattern" [routerLink] ="['/profile', user._id]">
+      <div class="col-sm-12 container"  id="eachRecipe">
         <div class="row">
           <div id="recipeCreator" class="col-sm-4">
             <img src="{{user.picture}}" class="img-circle crtr" >
           </div>
-          <div id=
-          "reviewName"class="col-sm-8">
+          <div id="reviewName"class="col-sm-8">
             <p>{{user.fullName}}</p>
+            <p> <span id="joined">Joined: </span> <span id="date">{{user.createdAt | date: 'mediumDate'}}</span></p>
           </div>
-            <p> <span>Joined: </span> {{user.createdAt | date: 'mediumDate'}}</p>
         </div>
     </div>
 
