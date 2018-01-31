@@ -15,7 +15,8 @@
       <div class="col-md-4">
       </div>
       <div  class="col-md-3">
-        <button *ngIf="currentUser.fullName" [routerLink]="['/recipes']" id="allRecipe"type="button" class="btn btn-outline-info pull-right">Explore Recipes</button>
+        <button *ngIf="currentUser.fullName" [routerLink]="['/users']" id="allRecipe"type="button" class="btn btn-outline-info pull-right"><span class="glyphicon glyphicon-user"></span> Chefs</button>
+        <button *ngIf="currentUser.fullName" [routerLink]="['/recipes']" id="allRecipe"type="button" class="btn btn-outline-info pull-right"><span class="glyphicon glyphicon-cutlery"></span> Recipes</button>
       </div>
       <div class="col-md-2">
         <div *ngIf="currentUser" class="profile pull-right">

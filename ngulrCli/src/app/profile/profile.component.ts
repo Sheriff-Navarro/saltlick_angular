@@ -16,12 +16,14 @@ import { ProfileServiceService} from '../services/profile-service.service';
 })
 export class ProfileComponent implements OnInit {
   recipe: any;
+  data: any;
+  followData: any;
   currentUser: any = {};
   userRecipeArray: any[] = [];
   recipeListError: string;
   baseUrl = environment.apiBase;
-  data: any;
   recipeCount: number;
+  paramsId = undefined;
 
   isShowingForm: boolean = false;
   isShowingSearch: boolean = true;
@@ -64,6 +66,17 @@ export class ProfileComponent implements OnInit {
       });
       // this.countRecipes();
 
+  }
+
+  followUser(id, currentUserId){
+    console.log("Anything   ", currentUserId);
+    this.profileThang.doFollowUser(id, currentUserId)
+
+    // .subscribe()
+    .subscribe((followData) =>{
+      console.log('follow Data = ', followData);
+      this.followData = followData;
+    })
   }
 
   getThemProfileRecipe(id) {

@@ -22,6 +22,16 @@ export class ProfileServiceService {
     .map(res => res.json());
   }//close specific recipe
 
+  doFollowUser(id, user) {
+  var userId = {id:user._id}
+    return this.httpThang
+    .post(`${environment.apiBase}/api/profile/${id}/follow`, userId,
+    {withCredentials:true}
+  )
+  //parse the JSON
+  .map(res => res.json());
+  }
+
 
 
 }

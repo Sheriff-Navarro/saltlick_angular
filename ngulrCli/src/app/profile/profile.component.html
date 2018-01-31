@@ -13,9 +13,19 @@
           </div>
           <div class="row">
             <div class="col-sm-2"></div>
-            <button type="button" class="btn btn-primary col-sm-8" id="createRecButt" data-toggle="modal" data-target="#exampleModal" style="
-            margin-top: 40px;">
-            <span class="glyphicon glyphicon-plus"></span>  Recipe</button>
+            <div class="col-sm-8">
+              <div class="row">
+                <button type="button" class="btn btn-primary col-sm-12" id="createRecButt" data-toggle="modal" data-target="#exampleModal" style="
+                margin-top: 28px;">
+                <span class="glyphicon glyphicon-plus"></span>  Recipe</button>
+              </div>
+              <div class="row">
+                <button type="button" class="btn btn-primary col-sm-12" id="createRecButt" (click)='followUser(data.user._id, currentUser)'style="
+                margin-top: 10px; background-color: #a1b5d1;">
+                Follow</button>
+              </div>
+            </div>
+
           <div class="col-sm-2"></div>
           </div>
           <div class="row">

@@ -22,6 +22,8 @@ export class UsersComponent implements OnInit {
   userArray: any[] = [];
   userListError: string;
   isShowingSearch: boolean = true;
+  paramsId = undefined;
+
 
 
   constructor(
