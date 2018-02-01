@@ -24,9 +24,13 @@ export class ProfileComponent implements OnInit {
   baseUrl = environment.apiBase;
   recipeCount: number;
   paramsId = undefined;
-
+  showFollow = true;
+  followDisabled = false;
   isShowingForm: boolean = false;
   isShowingSearch: boolean = true;
+  showAlert = false;
+  followButtonEnabled = true;
+
 
 
   recipeInfo = {
@@ -57,6 +61,7 @@ export class ProfileComponent implements OnInit {
     this.authThang.checklogin()
       .then((userFromApi) => {
           this.currentUser = userFromApi;
+          this.checkIfFollowing();
           this.route.params.subscribe(params => {
             this.getThemProfileRecipe(params['id']);
           })
@@ -64,8 +69,16 @@ export class ProfileComponent implements OnInit {
       .catch(() => {
           this.routerThang.navigate(['/']);
       });
+      this.getParams();
       // this.countRecipes();
 
+  }
+
+  getParams() {
+    this.route.params.subscribe(params=> {
+      this.paramsId = params['id'];
+      console.log("Params Id ", this.paramsId)
+    })
   }
 
   followUser(id, currentUserId){
@@ -78,6 +91,36 @@ export class ProfileComponent implements OnInit {
       this.followData = followData;
     })
   }
+
+  followAlert() {
+    this.showAlert = true;
+  }
+
+  closeAlert() {
+    this.showAlert = false;
+  }
+
+  disableFollow() {
+    this.showFollow = false;
+    this.followDisabled = true;
+  }
+
+  checkIfFollowing(){
+    console.log('checking if following running...', this.paramsId,
+  this.currentUser.following)
+  //let result =
+  if(this.currentUser.following.find(elem => elem == this.paramsId)){
+  this.showFollow = false;
+  this.followDisabled = true;
+} else {
+  this.showFollow = true;
+  this.followDisabled = false;
+}
+  }
+
+
+
+
 
   getThemProfileRecipe(id) {
     this.profileThang.getProfile(id)

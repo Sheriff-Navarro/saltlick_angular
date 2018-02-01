@@ -1,5 +1,10 @@
 <app-navbar></app-navbar>
-
+<div *ngIf=showAlert class="alert alert-success alert-dismissible fade show" id="bookMarkAlert" role="alert">
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+  <span aria-hidden="true">&times;</span>
+  </button>
+    You are now following <strong>{{data.user.fullName}}</strong>.
+</div>
 <div class="container" id="page">
   <div class="row">
     <div class="col-md-3">
@@ -20,9 +25,9 @@
                 <span class="glyphicon glyphicon-plus"></span>  Recipe</button>
               </div>
               <div class="row">
-                <button type="button" class="btn btn-primary col-sm-12" id="createRecButt" (click)='followUser(data.user._id, currentUser)'style="
-                margin-top: 10px; background-color: #a1b5d1;">
+                <button *ngIf=showFollow type="button" class="btn btn-primary col-sm-12" id="followButton" (click)='followUser(data.user._id, currentUser)' (click)="followAlert()" (click)="disableFollow()">
                 Follow</button>
+                <button *ngIf="followDisabled"type="button" class="btn btn-primary col-sm-12" id="followButtonEnabled">Following</button>
               </div>
             </div>
 
