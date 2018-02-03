@@ -30,7 +30,7 @@ export class ProfileComponent implements OnInit {
   isShowingSearch: boolean = true;
   showAlert = false;
   followButtonEnabled = true;
-
+  sameUserViewing = undefined;
 
 
   recipeInfo = {
@@ -62,6 +62,7 @@ export class ProfileComponent implements OnInit {
       .then((userFromApi) => {
           this.currentUser = userFromApi;
           this.checkIfFollowing();
+          this.isSameUserViewing();
           this.route.params.subscribe(params => {
             this.getThemProfileRecipe(params['id']);
           })
@@ -118,6 +119,17 @@ export class ProfileComponent implements OnInit {
 }
   }
 
+isSameUserViewing() {
+  console.log('current user ', this.currentUser._id);
+  console.log('paramsId...', this.paramsId);
+  if(this.currentUser._id === this.paramsId) {
+    this.sameUserViewing = true;
+    console.log('Same User is Viewing', this.sameUserViewing);
+  } else if(this.currentUser._id != this.paramsId) {
+    this.sameUserViewing = false;
+    console.log('Same User is Viewing ', this.sameUserViewing);
+  }
+}
 
 
 

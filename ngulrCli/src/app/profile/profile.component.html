@@ -20,34 +20,69 @@
             <div class="col-sm-2"></div>
             <div class="col-sm-8">
               <div class="row">
-                <button type="button" class="btn btn-primary col-sm-12" id="createRecButt" data-toggle="modal" data-target="#exampleModal" style="
+                <button *ngIf="sameUserViewing" type="button" class="btn btn-primary col-sm-12" id="createRecButt" data-toggle="modal" data-target="#exampleModal" style="
                 margin-top: 28px;">
                 <span class="glyphicon glyphicon-plus"></span>  Recipe</button>
               </div>
-              <div class="row">
+              <div class="row" *ngIf="!sameUserViewing" >
                 <button *ngIf=showFollow type="button" class="btn btn-primary col-sm-12" id="followButton" (click)='followUser(data.user._id, currentUser)' (click)="followAlert()" (click)="disableFollow()">
                 Follow</button>
                 <button *ngIf="followDisabled"type="button" class="btn btn-primary col-sm-12" id="followButtonEnabled">Following</button>
               </div>
+              <!-- <div class="row">
+                <div class="col-sm-6">
+                  Followers
+                  <div class="">
+                    {{data.user.followers.length}}
+                  </div>
+                </div>
+                <div class="col-sm-6">
+                  Following
+                  {{data.user.following.length}}
+                </div>
+              </div> -->
             </div>
 
           <div class="col-sm-2"></div>
           </div>
-          <div class="row">
+          <!-- <div class="row">
             <div class="col-md-12 recipeSideBar">
             <span class=""> RECIPES</span>
               <p class="count">{{data.recipe.length}}</p>
             </div>
-          </div>
+          </div> -->
         </div>
       </div>
     </div>
     <div class="col-md-9">
-      <ul class="nav nav-pills">
-<li class="active"><a data-toggle="pill" href="#home">My Recipes</a></li>
-<li><a data-toggle="pill" href="#menu1">Bookmarked Recipes</a></li>
-<!-- <li><a data-toggle="pill" href="#menu2">Menu 2</a></li> -->
-</ul>
+      <div class="row" id="profileStats">
+        <div class="col-sm-4">
+          <div class="col-md-12 recipeSideBar">
+          <span class="statTitle"> RECIPES</span>
+            <p class="count">{{data.recipe.length}}</p>
+          </div>
+        </div>
+        <div class="col-sm-4">
+          <div class="col-md-12 recipeSideBar">
+          <span class="statTitle"> FOLLOWERS </span>
+            <p class="count">{{data.user.followers.length}}</p>
+          </div>
+        </div>
+        <div class="col-sm-4">
+          <div class="col-md-12 recipeSideBar">
+          <span class="statTitle"> FOLLOWING </span>
+            <p class="count">{{data.user.following.length}}</p>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <ul class="nav nav-pills">
+          <li class="active"><a data-toggle="pill"   href="#home">My Recipes</a></li>
+          <li><a data-toggle="pill" href="#menu1">Bookmarked Recipes</a></li>
+          <!-- <li><a data-toggle="pill" href="#menu2">Menu 2</a></li> -->
+        </ul>
+      </div>
+
 
 <div class="tab-content">
 <div id="home" class="tab-pane fade in active">
@@ -63,17 +98,8 @@
         <div class="col-sm-12">
         <p id="recipeNamed" [routerLink]="['/recipe', recipe._id]">{{recipe.name}}</p>
         <p id="cookTime"> <span class = "	glyphicon glyphicon-time"></span> <b >{{recipe.cookTime}}</b> Minutes </p>
-        <!-- <div id="recipeCreator"class="row">
-          <div [routerLink]="['/profile', recipe.user._id]" class="col-md-12 rcpeCrtr" >
-            <img src="{{recipe.user.picture}}" class="img-circle crtr" >
-            <span id="reviewName">{{recipe.user.fullName}}</span>
-          </div>
-        </div> -->
-        <!-- <p id="recipeCreator">Recipe Creator: <b id="creator1"     [routerLink]="['/profile', recipe.user._id]"
-        >{{recipe.user.fullName}}</b></p> -->
         </div>
       </div>
-
   </div>
   <!-- end of row -->
   </div>
@@ -85,7 +111,7 @@
 </div>
 <div id="menu1" class="tab-pane fade">
   <hr class="line">
-  <h3>Find all your bookmarked recipes here!</h3>
+  <h3 *ngIf="data.user.savedRecipes.length < 1" >Recipes bookmarked by <b>{{data.user.fullName}}</b> will appear here!</h3>
   <div class = "row">
   <div  class = "col-sm-4" *ngFor = "let recipe of data.user.savedRecipes">
   <div [routerLink]="['/recipe', recipe._id]" id="eachRecipe" class = "col-sm-12 container" >
@@ -97,20 +123,6 @@
         <div class="col-sm-12">
         <p id="recipeNamed" [routerLink]="['/recipe', recipe._id]">{{recipe.name}}</p>
         <p id="cookTime"> <span class = "	glyphicon glyphicon-time"></span> <b >{{recipe.cookTime}}</b> Minutes </p>
-        <!-- <div id="recipeCreator"class="row">
-          <div [routerLink]="['/profile', recipe.user._id]" class="col-md-12 rcpeCrtr" >
-            <img src="{{recipe.user.picture}}" class="img-circle crtr" >
-            <span id="reviewName">{{recipe.user.fullName}}</span>
-          </div>
-        </div> -->
-        <!-- <div id="recipeCreator"class="row">
-          <div [routerLink]="['/profile', recipe.user._id]" class="col-md-12 rcpeCrtr" >
-            <img src="{{recipe.user.picture}}" class="img-circle crtr" >
-            <span id="reviewName">{{recipe.user.fullName}}</span>
-          </div>
-        </div> -->
-        <!-- <p id="recipeCreator">Recipe Creator: <b id="creator1"     [routerLink]="['/profile', recipe.user._id]"
-        >{{recipe.user.fullName}}</b></p> -->
         </div>
       </div>
 
