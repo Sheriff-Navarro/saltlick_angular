@@ -71,6 +71,8 @@ export class ProfileComponent implements OnInit {
           this.routerThang.navigate(['/']);
       });
       this.getParams();
+      // this.getData();
+
       // this.countRecipes();
 
   }
@@ -80,6 +82,10 @@ export class ProfileComponent implements OnInit {
       this.paramsId = params['id'];
       console.log("Params Id ", this.paramsId)
     })
+  }
+
+  getData(){
+    console.log("Data: ", this.data)
   }
 
   followUser(id, currentUserId){
@@ -137,7 +143,8 @@ isSameUserViewing() {
   getThemProfileRecipe(id) {
     this.profileThang.getProfile(id)
     .subscribe(
-      (data) => { this.data = data },
+      (data) => { this.data = data
+      console.log("This data: ", this.data) },
       () => {
         this.recipeListError = 'Sorry, could not retrieve all the recipes'
       }
